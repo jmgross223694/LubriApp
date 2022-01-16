@@ -1,0 +1,42 @@
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb

@@ -1,0 +1,32 @@
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.pdb
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Servicios.pdb
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Dominio.pdb
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Debug\Negocio.pdb
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.dll
+C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.pdb

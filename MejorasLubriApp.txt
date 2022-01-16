@@ -1,0 +1,4 @@
+Mejoras LubriApp:
+
+- Al sacar un turno, si el CUIT/CUIL/DNI ingresado, no existe en el sistema, automáticamente redirigir a la página 
+de registro, llevando el CUIT/CUIL/DNI ingresado.

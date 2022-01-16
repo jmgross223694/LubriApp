@@ -1,0 +1,11 @@
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Servicios.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Servicios.pdb
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Dominio.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Negocio.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Dominio.pdb
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\bin\Release\Negocio.pdb
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.csproj.AssemblyReference.cache
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.dll
+C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.csproj.CopyComplete

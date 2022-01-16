@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lubricentro Tony</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="img/favicon-oil.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+         <nav class="navbar navbar-expand-lg navbar-light color-bg">
+            <a class="navbar-brand font-stl" href="index.aspx">Lubricentro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link font-stl" href="index.aspx">Inicio<span class="sr-only">(current)</span></a>
+                    </li>                
+                    <li class="nav-item">
+                        <a class="nav-link font-stl" href="turnos.aspx">Turnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-stl" href="contacto.aspx">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-stl" href="catalogoProductos.aspx">Catálogo</a>
+                    </li> 
+                    <li class="nav-item">
+                        <asp:Label ID="lblWebInterna" Text="" runat="server">
+                            <a class="nav-link font-stl" href="WebInterna.aspx">Web Interna</a>
+                        </asp:Label>
+                    </li>                    
+                </ul>
+                <a href="login.aspx" Class="log-stl">
+                    <asp:Label ID="btnIniciarSesion" runat="server" Text="Iniciar sesión"></asp:Label>
+                </a>
+
+                <asp:Button ID="btnCerrarSesion2" runat="server" Text="Cerrar Sesion" OnClick="btnCerrarSesion2_Click" CssClass="btn-cerrar-sesion" UseSubmitBehavior="False" />
+                
+            </div>
+        </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> LubriApp</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

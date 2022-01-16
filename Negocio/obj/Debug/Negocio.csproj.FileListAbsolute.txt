@@ -1,0 +1,53 @@
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juan Manuel Gross\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+D:\Facultad 2021 1C\Prog 3\TPC!\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+C:\Users\joanl\OneDrive\Documentos\Materias New\Cuatri pasado\Programacion III\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juan Manuel\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Debug\Negocio.pdb
