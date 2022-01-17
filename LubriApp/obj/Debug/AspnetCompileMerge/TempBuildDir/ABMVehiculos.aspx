@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMVehiculos.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.ABMVehiculos" EnableEventValidation = "false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMVehiculos.aspx.cs" Inherits="LubriApp.ABMVehiculos" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1 class="h1-abm">ABM - Vehículos</h1>

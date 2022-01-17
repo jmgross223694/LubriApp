@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebInterna.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.WebInterna" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebInterna.aspx.cs" Inherits="LubriApp.WebInterna" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="web-interna-botonera">        
         <div>

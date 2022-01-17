@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="LubriApp.Global" Language="C#" %>

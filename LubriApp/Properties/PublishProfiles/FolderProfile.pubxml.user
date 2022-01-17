@@ -5,47 +5,47 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\SomeeDeploy\LubriApp</_PublishTargetUrl>
-    <History>True|2022-01-16T23:08:01.1570798Z;True|2022-01-16T19:49:32.7629231-03:00;True|2022-01-16T19:11:29.4714155-03:00;True|2022-01-16T18:21:08.4994954-03:00;True|2022-01-15T14:37:26.5306615-03:00;True|2022-01-15T13:58:36.5125758-03:00;True|2022-01-15T13:16:36.1593430-03:00;True|2022-01-15T11:20:18.8523291-03:00;True|2022-01-15T00:58:23.8195073-03:00;True|2022-01-15T00:53:55.4489465-03:00;True|2022-01-15T00:40:53.4573235-03:00;True|2022-01-14T20:58:37.4971615-03:00;True|2022-01-14T20:55:27.9145183-03:00;True|2022-01-14T20:11:11.2384473-03:00;</History>
+    <History>True|2022-01-16T23:50:44.1855652Z;True|2022-01-16T20:40:59.1340205-03:00;True|2022-01-16T20:08:01.1570798-03:00;True|2022-01-16T19:49:32.7629231-03:00;True|2022-01-16T19:11:29.4714155-03:00;True|2022-01-16T18:21:08.4994954-03:00;True|2022-01-15T14:37:26.5306615-03:00;True|2022-01-15T13:58:36.5125758-03:00;True|2022-01-15T13:16:36.1593430-03:00;True|2022-01-15T11:20:18.8523291-03:00;True|2022-01-15T00:58:23.8195073-03:00;True|2022-01-15T00:53:55.4489465-03:00;True|2022-01-15T00:40:53.4573235-03:00;True|2022-01-14T20:58:37.4971615-03:00;True|2022-01-14T20:55:27.9145183-03:00;True|2022-01-14T20:11:11.2384473-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ABMClientes.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMEmpleados.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMMarcasProducto.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMMarcasVehiculo.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMProductos.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="ABMProveedores.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMServicios.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMTiposProducto.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMTiposServicio.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMTurnos.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMUsuario.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="ABMVehiculos.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="About.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:08</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>01/15/2022 16:02:54</publishTime>
@@ -54,10 +54,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:54</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>01/16/2022 20:07:58</publishTime>
+      <publishTime>01/16/2022 20:50:41</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>01/16/2022 20:07:58</publishTime>
+      <publishTime>01/16/2022 20:50:41</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.bootstrap.dll">
       <publishTime>01/15/2022 16:02:54</publishTime>
@@ -76,6 +76,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/es/System.Web.Optimization.resources.dll">
       <publishTime>01/15/2022 16:02:54</publishTime>
+    </File>
+    <File Include="bin/LubriApp.dll">
+      <publishTime>01/16/2022 20:49:26</publishTime>
+    </File>
+    <File Include="bin/LubriApp.pdb">
+      <publishTime>01/16/2022 20:49:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>01/15/2022 16:02:54</publishTime>
@@ -273,13 +279,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="catalogoProductos.aspx">
-      <publishTime>01/15/2022 16:02:54</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="Contact.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="contacto.aspx">
-      <publishTime>01/15/2022 16:02:54</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="Content/bootstrap-grid.css">
       <publishTime>01/15/2022 16:02:53</publishTime>
@@ -327,10 +333,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="Error.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>01/15/2022 16:02:54</publishTime>
@@ -339,22 +345,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:54</publishTime>
     </File>
     <File Include="index.aspx">
-      <publishTime>01/15/2022 16:02:54</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="libman.json">
       <publishTime>01/16/2022 14:53:45</publishTime>
     </File>
     <File Include="login.aspx">
+      <publishTime>01/16/2022 20:48:07</publishTime>
+    </File>
+    <File Include="LubriApp.csproj">
+      <publishTime>01/16/2022 20:17:08</publishTime>
+    </File>
+    <File Include="LubriApp.csproj.user">
+      <publishTime>01/16/2022 20:44:09</publishTime>
+    </File>
+    <File Include="packages.config">
       <publishTime>01/15/2022 16:02:54</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>01/16/2022 20:07:51</publishTime>
+      <publishTime>01/16/2022 20:50:35</publishTime>
     </File>
     <File Include="registroCliente.aspx">
-      <publishTime>01/15/2022 16:02:54</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="registroVehiculo.aspx">
-      <publishTime>01/15/2022 16:02:54</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>01/15/2022 16:02:53</publishTime>
@@ -405,6 +420,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="Scripts/index.js.flow">
+      <publishTime>01/15/2022 16:02:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.intellisense.js">
       <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="Scripts/jquery-3.4.1.js">
@@ -735,19 +753,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="turnos.aspx">
-      <publishTime>01/16/2022 14:10:17</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/16/2022 19:49:19</publishTime>
+      <publishTime>01/16/2022 20:40:46</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>01/15/2022 16:02:53</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>01/15/2022 16:02:53</publishTime>
     </File>
     <File Include="WebInterna.aspx">
-      <publishTime>01/15/2022 16:02:53</publishTime>
+      <publishTime>01/16/2022 20:48:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
-create database GROSS_LAINO_CHAPARRO_DB
+create database LubriApp
 GO
 
-use GROSS_LAINO_CHAPARRO_DB
+use LubriApp
 GO
 
 create table TiposProducto(

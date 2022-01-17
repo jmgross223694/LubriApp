@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMTiposServicio.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.ABMTiposServicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMTiposServicio.aspx.cs" Inherits="LubriApp.ABMTiposServicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1 class="h1-abm">ABM - Tipos de Servicios</h1>
