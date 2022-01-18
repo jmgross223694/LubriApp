@@ -635,9 +635,9 @@ CONVERT(VARCHAR(10),FechaHoraCambio,108) as HoraCambio
 from HistoricoTurnos
 GO
 
-create view ExportTurnos
+create or alter view ExportTurnos
 as
-select ID as ID, Dia as Dia, CONVERT(VARCHAR(10),FechaHora,105) as Fecha, CONVERT(VARCHAR(5),FechaHora,108) as Hora,
+select ID as ID, Dia as Dia, FechaHora, CONVERT(VARCHAR(10),FechaHora,105) as Fecha, CONVERT(VARCHAR(5),FechaHora,108) as Hora,
 isnull((select C.ApeNom from Clientes C where ID = T.IdCliente),(select C.RazonSocial from Clientes C where ID = T.IdCliente)) as Cliente, 
 (select C.CUIT_DNI from Clientes C where ID = T.IdCliente) as CUIT_DNI, (select V.Patente from Vehiculos V where ID = T.IdVehiculo) as Patente,
 IDHorario as IDHorario, IdTipoServicio as IdTipoServicio, (select TS.Descripcion from TiposServicio TS where ID = IdTipoServicio) as TipoServicio,

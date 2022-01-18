@@ -1041,9 +1041,9 @@ namespace LubriApp
 
         }
 
-        protected void dgvHistoricoServicios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void dgvServicios_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            dgvHistoricoServicios.PageIndex = e.NewPageIndex;
+            dgvServicios.PageIndex = e.NewPageIndex;
             BindData();
         }
     }

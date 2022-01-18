@@ -146,12 +146,8 @@
 
     </div>
 
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-servicios" OnClick="btnExportExcel_Click" />
-
-    <asp:Button ID="btnExportHistoricoServicios" runat="server" Text="Exportar histórico Servicios a Excel" cssclass="btn-export-excel-historico-turnos" OnClick="btnExportHistoricoServicios_Click" />
-
     <center>
-        <asp:GridView ID="dgvHistoricoServicios" visible="False" runat="server" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod" DataKeyNames="ID" AllowPaging="True" OnPageIndexChanging="dgvHistoricoServicios_PageIndexChanging">
+        <asp:GridView ID="dgvHistoricoServicios" visible="False" runat="server" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod" DataKeyNames="ID">
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
@@ -191,7 +187,7 @@
     </center>
 
     <center>
-        <asp:GridView ID="dgvServicios" runat="server" AllowSorting="True" OnSorting="dgvServicios_Sorting" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" PageSize="1" CssClass="dgv-abm-servicios" AllowCustomPaging="True">
+        <asp:GridView ID="dgvServicios" runat="server" AllowSorting="True" OnSorting="dgvServicios_Sorting" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" PageSize="10" CssClass="dgv-abm-servicios" AllowCustomPaging="True" AllowPaging="True" OnPageIndexChanging="dgvServicios_PageIndexChanging">
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
@@ -222,6 +218,10 @@
         <asp:SqlDataSource ID="ExportServicios" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportServicios] ORDER BY [Fecha] DESC, [Hora] DESC"></asp:SqlDataSource>
         
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar grilla" cssclass="btn-export-excel btn-export-excel-abm-servicios" OnClick="btnExportExcel_Click" />
+
+    <asp:Button ID="btnExportHistoricoServicios" runat="server" Text="Exportar histórico" cssclass="btn-export-excel-historico-turnos" OnClick="btnExportHistoricoServicios_Click" />
 
     <script>
         function solonumeros(e) {

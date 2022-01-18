@@ -19,21 +19,10 @@
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-    <asp:Label Text="Mostrar turnos..." runat="server" Style="font-size: 16px;" />
-    <asp:DropDownList ID="ddlMostrar" runat="server" AppendDataBoundItems="true" AutoPostBack="True" Height="30" OnSelectedIndexChanged="ddlMostrar_SelectedIndexChanged" >
-        <asp:ListItem Value="0">Todos</asp:ListItem>
-        <asp:ListItem Value="Hoy">De hoy</asp:ListItem>
-        <asp:ListItem Value="Completados">Completados</asp:ListItem>
-        <asp:ListItem Value="Futuros">Futuros</asp:ListItem>
-        <asp:ListItem Value="Pendientes">Pendientes</asp:ListItem>
-    </asp:DropDownList>
-
     <asp:TextBox ID="txtBorrarTurnosPorPatente" runat="server" tooltip="Ingresar patente" placeholder="Patente..." />
     <asp:Button ID="btnBorrarTurnosPorPatente" runat="server" Text="Borrar Turnos por Patente" onclick="btnBorrarTurnosPorPatente_Click" />
 
     <br /><br />
-
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-turnos" OnClick="btnExportExcel_Click" />
 
     <Button ID="btnEditar" style="border-radius: 100px; background-color: transparent; border-color: transparent;" >
         
@@ -43,9 +32,9 @@
 
     <asp:ImageButton ID="btnDelete" runat="server" ToolTip="Cancelar Turno" onclientclick="return confirm('¿Seguro que desea cancelar el Turno?');" onclick="btnDelete_Click" ImageUrl="~/img/del-logo.png" cssclass="img-btn-del-abm" Style="vertical-align: middle;" />
     
-    <asp:Button ID="btnCompletarTurno" runat="server" Text="Completar" ToolTip="Completar Turno" onclick="btnCompletarTurno_Click" Style="vertical-align: middle;" />
+    <asp:Button ID="btnCompletarTurno" runat="server" Text="Completar" ToolTip="Completar Turno" onclick="btnCompletarTurno_Click" CssClass="btn-completar-turno" />
 
-    <asp:DropDownList ID="ddlEmpleados" runat="server" AppendDataBoundItems="true" Style="height: 31px; vertical-align: middle;" >
+    <asp:DropDownList ID="ddlEmpleados" runat="server" AppendDataBoundItems="true" CssClass="ddl-empleados-abm-turnos" >
         <asp:ListItem Value="0" >Seleccione Empleado...</asp:ListItem>
     </asp:DropDownList>
     
@@ -99,17 +88,28 @@
 
     </div>
 
-    <br />
+    <br /><br />
 
-    <asp:Button ID="btnExportTurnosGeneral" runat="server" Text="Exportar histórico Turnos a Excel" cssclass="btn-export-excel-historico-turnos" OnClick="btnExportHistoricoExcel_Click" />
+    <asp:Label ID="lblMostrarTurnos" Text="Mostrar..." runat="server" CssClass="lbl-mostrar-turnos-abmturnos" />
+    <asp:DropDownList ID="ddlMostrar" runat="server" AppendDataBoundItems="true" AutoPostBack="True" Height="30" OnSelectedIndexChanged="ddlMostrar_SelectedIndexChanged" CssClass="ddl-mostrar-turnos-abmturnos" >
+        <asp:ListItem Value="Todos">Todos</asp:ListItem>
+        <asp:ListItem Value="Hoy">De hoy</asp:ListItem>
+        <asp:ListItem Value="Completados">Completados</asp:ListItem>
+        <asp:ListItem Value="Futuros">Futuros</asp:ListItem>
+        <asp:ListItem Value="Pendientes">Pendientes</asp:ListItem>
+    </asp:DropDownList>
+    <asp:Label ID="lblTotalTurnos" Text="(Recuento" runat="server" CssClass="lbl-total-turnos-abmturnos" />
+
+    <br /><br />
 
     <center>
-        <asp:GridView ID="dgvHistoricoTurnos" visible="false" runat="server" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod" DataKeyNames="ID" AllowPaging="True" OnPageIndexChanging="dgvHistoricoTurnos_PageIndexChanging">
+        <asp:GridView ID="dgvHistoricoTurnos" visible="false" runat="server" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod" DataKeyNames="ID">
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
-                
-                <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="ID" HeaderText="Cód. Reserva" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="FechaCambio" HeaderText="Fecha último cambio" SortExpression="FechaCambio" />
+                <asp:BoundField DataField="HoraCambio" HeaderText="Hora último cambio" SortExpression="HoraCambio" />
                 <asp:BoundField DataField="ID Tabla Turnos" HeaderText="ID Tabla Turnos" SortExpression="ID Tabla Turnos" />
                 <asp:BoundField DataField="Dia" HeaderText="Día" SortExpression="Dia" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" ReadOnly="True" SortExpression="Fecha" />
@@ -118,9 +118,6 @@
                 <asp:BoundField DataField="Vehiculo" HeaderText="Vehículo" SortExpression="Vehiculo" />
                 <asp:BoundField DataField="Servicio" HeaderText="Servicio" SortExpression="Servicio" />
                 <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                <asp:BoundField DataField="FechaCambio" HeaderText="Fecha último cambio" SortExpression="FechaCambio" />
-                <asp:BoundField DataField="HoraCambio" HeaderText="Hora último cambio" SortExpression="HoraCambio" />
-                
             </Columns>
             
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -142,11 +139,11 @@
     <br /><br />
 
     <center>
-        <asp:GridView ID="dgvTurnos" runat="server" AllowSorting="True" OnSorting="dgvTurnos_Sorting" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" PageSize="2" CssClass="dgv-abm-prod" DataKeyNames="ID">
+        <asp:GridView ID="dgvTurnos" runat="server" AllowSorting="True" OnSorting="dgvTurnos_Sorting" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" PageSize="10" CssClass="dgv-abm-prod" DataKeyNames="ID" AllowPaging="true" OnPageIndexChanging="dgvTurnos_PageIndexChanging">
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="ID" HeaderText="Cód. Reserva" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                 <asp:BoundField DataField="Dia" HeaderText="Día" SortExpression="Dia" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" ReadOnly="True" SortExpression="Fecha" />
                 <asp:BoundField DataField="Hora" HeaderText="Hora" ReadOnly="True" SortExpression="Hora" />
@@ -172,6 +169,9 @@
         <asp:SqlDataSource ID="ExportTurnos" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportTurnos]"></asp:SqlDataSource>
         
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar grilla" cssclass="btn-export-excel btn-export-excel-abm-turnos" OnClick="btnExportExcel_Click" />
+    <asp:Button ID="btnExportTurnosGeneral" runat="server" Text="Exportar histórico" cssclass="btn-export-excel-historico-turnos" OnClick="btnExportHistoricoExcel_Click" />
 
     <script>
         function solonumeros(e) {

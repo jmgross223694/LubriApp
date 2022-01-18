@@ -932,12 +932,11 @@
     font-weight: 600;
     text-shadow: black 0.1em 0.1em 1.9em;
     box-shadow: 0 4px 6px -6px black;
-    margin-bottom: 30px;
-    width: 212px;
     position: relative;
+    vertical-align: middle;
 }
 
-.btn-export-excel-historico-turnos{
+.btn-export-excel-historico-turnos {
     border-radius: 50px;
     border: solid 1px;
     color: #ffffff;
@@ -950,19 +949,16 @@
     font-weight: 600;
     text-shadow: black 0.1em 0.1em 1.9em;
     box-shadow: 0 4px 6px -6px black;
-    margin-bottom: 30px;
-    width: 300px;
     position: relative;
-    left: 0px;
-    top: 0px;
+    vertical-align: middle;
 }
 
-.btn-export-excel-historico-turnos:hover {
+.btn-export-excel:hover {
     color: #9fcecc;
     background-color: #ffffff;
 }
 
-.btn-export-excel:hover {
+.btn-export-excel-historico-turnos:hover {
     color: #9fcecc;
     background-color: #ffffff;
 }
@@ -1412,4 +1408,44 @@
 .btn-agregar-vehiculo-abm:hover {
     background-color: #ffffff;
     color: #98D983;
+}
+
+.btn-completar-turno {
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #98D983;
+    border-radius: 50px;
+    border: solid 1px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding-inline: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    text-shadow: black 0.1em 0.1em 1.9em;
+    box-shadow: 0 4px 6px -6px black;
+    position: relative;
+    left: 10px;
+}
+
+.btn-completar-turno:hover {
+    background-color: #ffffff;
+    color: #98D983;
+}
+
+.lbl-mostrar-turnos-abmturnos {
+    font-size: 16px;
+    position: relative;
+}
+
+.ddl-mostrar-turnos-abmturnos {
+    position: relative;
+}
+
+.ddl-empleados-abm-turnos {
+    height: 31px;
+    vertical-align: middle;
+    position: relative;
+    left: 15px;
+    background-color: white;
 }
