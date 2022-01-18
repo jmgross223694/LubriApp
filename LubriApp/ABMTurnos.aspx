@@ -5,7 +5,7 @@
 
     <br />
 
-    <asp:DropDownList ID="ddlFiltroBuscar" runat="server" AppendDataBoundItems="true" Style="height: 31px; vertical-align: top;">
+    <asp:DropDownList ID="ddlFiltroBuscar" runat="server" AppendDataBoundItems="true" Style="height: 31px;">
         <asp:ListItem Value="0">Buscar por...</asp:ListItem>
         <asp:ListItem Value="ID">ID</asp:ListItem>
         <asp:ListItem Value="Patente">Patente</asp:ListItem>
@@ -17,10 +17,8 @@
     
     <asp:ImageButton ID="imgBtnBuscarFiltro" runat="server" ToolTip="Buscar Turno" OnClick="imgBtnBuscarFiltro_Click" ImageUrl="~/img/find-logo.png" cssclass="btn-buscar-filtro-abm" />
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-    <asp:TextBox ID="txtBorrarTurnosPorPatente" runat="server" tooltip="Ingresar patente" placeholder="Patente..." />
-    <asp:Button ID="btnBorrarTurnosPorPatente" runat="server" Text="Borrar Turnos por Patente" onclick="btnBorrarTurnosPorPatente_Click" />
+    <asp:TextBox ID="txtBorrarTurnosPorPatente" runat="server" tooltip="Ingresar patente" CssClass="txt-borrar-turnos-por-patente" placeholder="Patente..." />
+    <asp:Button ID="btnBorrarTurnosPorPatente" runat="server" Text="Borrar Turnos por Patente" CssClass="btn-borrar-turnos-por-patente" onclick="btnBorrarTurnosPorPatente_Click" />
 
     <br /><br />
 
@@ -88,17 +86,24 @@
 
     </div>
 
+    <br />
+
+    <asp:Label ID="lblTabla" runat="server" Font-Size="8" >
+        Para editar / cancelar / completar un turno, se debe buscar por ID.
+    </asp:Label>
+
     <br /><br />
 
     <asp:Label ID="lblMostrarTurnos" Text="Mostrar..." runat="server" CssClass="lbl-mostrar-turnos-abmturnos" />
     <asp:DropDownList ID="ddlMostrar" runat="server" AppendDataBoundItems="true" AutoPostBack="True" Height="30" OnSelectedIndexChanged="ddlMostrar_SelectedIndexChanged" CssClass="ddl-mostrar-turnos-abmturnos" >
+        <asp:ListItem Value="0">Seleccione</asp:ListItem>
         <asp:ListItem Value="Todos">Todos</asp:ListItem>
         <asp:ListItem Value="Hoy">De hoy</asp:ListItem>
         <asp:ListItem Value="Completados">Completados</asp:ListItem>
         <asp:ListItem Value="Futuros">Futuros</asp:ListItem>
         <asp:ListItem Value="Pendientes">Pendientes</asp:ListItem>
     </asp:DropDownList>
-    <asp:Label ID="lblTotalTurnos" Text="(Recuento" runat="server" CssClass="lbl-total-turnos-abmturnos" />
+    <asp:Label ID="lblTotalTurnos" Text="(-)" runat="server" CssClass="lbl-total-turnos-abmturnos" />
 
     <br /><br />
 

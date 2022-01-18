@@ -42,15 +42,6 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.ImageButton imgBtnBuscarFiltro;
 
         /// <summary>
-        /// Control ddlMostrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
-
-        /// <summary>
         /// Control txtBorrarServiciosPorPatente.
         /// </summary>
         /// <remarks>
@@ -256,6 +247,24 @@ namespace LubriApp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado2;
+
+        /// <summary>
+        /// Control ddlMostrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
+
+        /// <summary>
+        /// Control lblTotalServicios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalServicios;
 
         /// <summary>
         /// Control dgvHistoricoServicios.

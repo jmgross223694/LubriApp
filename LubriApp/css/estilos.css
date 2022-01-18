@@ -1449,3 +1449,23 @@
     left: 15px;
     background-color: white;
 }
+
+.btn-borrar-turnos-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.txt-borrar-turnos-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.btn-borrar-servicios-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.txt-borrar-servicios-por-patente {
+    position: relative;
+    left: 150px;
+}

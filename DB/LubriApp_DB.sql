@@ -359,9 +359,9 @@ CONVERT(VARCHAR(10),E.FechaNacimiento,105) as FechaNacimiento, E.Mail as Mail, E
 from Empleados as E
 GO
 
-Create view ExportServicios
+Create or alter view ExportServicios
 as 
-select ID as ID, CONVERT(VARCHAR(10),s.FechaRealizacion,105) as Fecha, s.PatenteVehiculo as Patente,
+select ID as ID, FechaRealizacion as FechaHora, CONVERT(VARCHAR(10),s.FechaRealizacion,105) as Fecha, s.PatenteVehiculo as Patente,
 (select V.ID from Vehiculos V where V.Patente = PatenteVehiculo) as IdVehiculo, IdTipo as IdTipo,
 (Select ts.Descripcion from TiposServicio ts where ts.id = s.IdTipo) as TiposServicio, s.Comentarios as Comentarios,
 (select isnull(c.ApeNom,c.RazonSocial) from Clientes c where c.ID = s.IdEmpleado) as Cliente,

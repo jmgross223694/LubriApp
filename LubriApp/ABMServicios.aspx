@@ -5,7 +5,7 @@
 
     <br />
 
-    <asp:DropDownList ID="ddlFiltroBuscar" runat="server" AppendDataBoundItems="true" Style="height: 31px; vertical-align: top;">
+    <asp:DropDownList ID="ddlFiltroBuscar" runat="server" AppendDataBoundItems="true" Style="height: 31px;">
         <asp:ListItem Value="0">Buscar por...</asp:ListItem>
         <asp:ListItem Value="ID">ID</asp:ListItem>
         <asp:ListItem Value="Patente">Patente</asp:ListItem>
@@ -17,19 +17,8 @@
     
     <asp:ImageButton ID="imgBtnBuscarFiltro" runat="server" ToolTip="Buscar Servicio" OnClick="imgBtnBuscarFiltro_Click" ImageUrl="~/img/find-logo.png" cssclass="btn-buscar-filtro-abm" />
     
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <asp:Label Text="Mostrar..." runat="server" Style="font-size: 16px;" />
-    <asp:DropDownList ID="ddlMostrar" runat="server" AppendDataBoundItems="true" Height="31" AutoPostBack="True" OnSelectedIndexChanged="ddlMostrar_SelectedIndexChanged" >
-        <asp:ListItem Value="Todos">Todos</asp:ListItem>
-        <asp:ListItem Value="Hoy">De hoy</asp:ListItem>
-        <asp:ListItem Value="Completados">Completados</asp:ListItem>
-        <asp:ListItem Value="Futuros">Futuros</asp:ListItem>
-        <asp:ListItem Value="Pendientes">Pendientes</asp:ListItem>
-    </asp:DropDownList>
-
-    <asp:TextBox ID="txtBorrarServiciosPorPatente" runat="server" tooltip="Ingresar patente" placeholder="Patente..." />
-    <asp:Button ID="btnBorrarServiciosPorPatente" runat="server" Text="Borrar Servicios por Patente" onclick="btnBorrarServiciosPorPatente_Click" />
+    <asp:TextBox ID="txtBorrarServiciosPorPatente" runat="server" CssClass="txt-borrar-servicios-por-patente" tooltip="Ingresar patente" placeholder="Patente..." />
+    <asp:Button ID="btnBorrarServiciosPorPatente" runat="server" Text="Borrar Servicios por Patente" CssClass="btn-borrar-servicios-por-patente" onclick="btnBorrarServiciosPorPatente_Click" />
 
     <br /><br />
 
@@ -38,11 +27,12 @@
     <br />
 
     <asp:Label ID="lblTabla" runat="server" Font-Size="8" >
-        <span style="padding: .5rem;">
         Para editar / eliminar un servicio, se debe buscar por ID.
-        </span>
     </asp:Label>
 
+    <%if (ddlEstado.Visible == true)
+    {%>
+        
     <table BorderStyle="Inset" style="width:60%; border-color: black; background-color: rgb(255 255 255);">
 
         <tr>
@@ -90,6 +80,7 @@
         </tr>
 
     </table>
+    <%} %>
 
     <div id="overlay" class="overlay" align="center">
 
@@ -146,6 +137,19 @@
 
     </div>
 
+    <br /><br />
+
+    <asp:Label Text="Mostrar..." runat="server" Style="font-size: 16px;" />
+    <asp:DropDownList ID="ddlMostrar" runat="server" AppendDataBoundItems="true" Height="31" AutoPostBack="True" OnSelectedIndexChanged="ddlMostrar_SelectedIndexChanged" >
+        <asp:ListItem Value="0">Seleccione</asp:ListItem>
+        <asp:ListItem Value="Todos">Todos</asp:ListItem>
+        <asp:ListItem Value="Hoy">De hoy</asp:ListItem>
+        <asp:ListItem Value="Completados">Completados</asp:ListItem>
+        <asp:ListItem Value="Futuros">Futuros</asp:ListItem>
+        <asp:ListItem Value="Pendientes">Pendientes</asp:ListItem>
+    </asp:DropDownList>
+    <asp:Label ID="lblTotalServicios" Text="(-)" runat="server" CssClass="lbl-total-servicios-abmservicios" />
+
     <center>
         <asp:GridView ID="dgvHistoricoServicios" visible="False" runat="server" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod" DataKeyNames="ID">
             <AlternatingRowStyle BackColor="White" />
@@ -153,6 +157,8 @@
             <Columns>
                 
                 <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="FechaModificado" HeaderText="Fecha última modificación" ReadOnly="True" SortExpression="FechaModificado" />
+                <asp:BoundField DataField="HoraModificado" HeaderText="Hora última modificación" ReadOnly="True" SortExpression="HoraModificado" />
                 <asp:BoundField DataField="IdOriginal" HeaderText="ID Tabla Servicios" SortExpression="IdOriginal" />
                 <asp:BoundField DataField="FechaRealizacion" HeaderText="Fecha de Realización" SortExpression="FechaRealizacion" />
                 <asp:BoundField DataField="IdVehiculo" HeaderText="ID Vehículo" ReadOnly="True" SortExpression="IdVehiculo" />
@@ -165,8 +171,6 @@
                 <asp:BoundField DataField="IdEmpleado" HeaderText="ID Empleado" SortExpression="IdEmpleado" />
                 <asp:BoundField DataField="Empleado" HeaderText="Empleado" ReadOnly="True" SortExpression="Empleado" />
                 <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                <asp:BoundField DataField="FechaModificado" HeaderText="Fecha última modificación" ReadOnly="True" SortExpression="FechaModificado" />
-                <asp:BoundField DataField="HoraModificado" HeaderText="Hora última modificación" ReadOnly="True" SortExpression="HoraModificado" />
                 
             </Columns>
             
@@ -186,14 +190,16 @@
         
     </center>
 
+    <br />
+
     <center>
         <asp:GridView ID="dgvServicios" runat="server" AllowSorting="True" OnSorting="dgvServicios_Sorting" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" PageSize="10" CssClass="dgv-abm-servicios" AllowCustomPaging="True" AllowPaging="True" OnPageIndexChanging="dgvServicios_PageIndexChanging">
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
                 
-                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
-                <asp:BoundField DataField="TiposServicio" HeaderText="Tipo de Servicio" ReadOnly="True" SortExpression="TiposServicio" />
+                <asp:BoundField DataField="ID" HeaderText="Orden N°" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="TiposServicio" HeaderText="Servicio a realizar" ReadOnly="True" SortExpression="TiposServicio" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" ReadOnly="True" SortExpression="Fecha" />
                 <asp:BoundField DataField="Hora" HeaderText="Hora" ReadOnly="True" SortExpression="Hora" />
                 <asp:BoundField DataField="Patente" HeaderText="Patente" SortExpression="Patente" />
@@ -218,6 +224,8 @@
         <asp:SqlDataSource ID="ExportServicios" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportServicios] ORDER BY [Fecha] DESC, [Hora] DESC"></asp:SqlDataSource>
         
     </center>
+
+    <br />
 
     <asp:Button ID="btnExportExcel" runat="server" Text="Exportar grilla" cssclass="btn-export-excel btn-export-excel-abm-servicios" OnClick="btnExportExcel_Click" />
 

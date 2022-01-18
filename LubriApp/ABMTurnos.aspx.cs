@@ -196,7 +196,7 @@ namespace LubriApp
         {
             ddlFiltroBuscar.SelectedValue = "0";
             txtBuscarFiltro.Text = "";
-            ddlMostrar.SelectedValue = "Todos";
+            ddlMostrar.SelectedValue = "0";
 
             string selectOrdenar = "SELECT * FROM ExportTurnos ORDER BY " + e.SortExpression + " "
                                     + GetSortDirection(e.SortExpression);
@@ -231,103 +231,107 @@ namespace LubriApp
 
         protected void ddlMostrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string seleccion = ddlMostrar.SelectedValue.ToString();
-            int resultado = ContarResultadosDB(seleccion, "null", "null");
-            //string dateAct = DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day;
-
-            if (ddlMostrar.SelectedValue != "Todos")
+            if (ddlMostrar.SelectedValue != "0")
             {
-                txtFecha.Visible = false;
-                txtCuitDni.Visible = false;
-                txtPatente.Visible = false;
-                ddlHoraTurno.Visible = false;
-                btnUpdate.Visible = false;
-                btnDelete.Visible = false;
-                btnCompletarTurno.Visible = false;
+                lblTabla.Visible = true;
+                string seleccion = ddlMostrar.SelectedValue.ToString();
+                int resultado = ContarResultadosDB(seleccion, "null", "null");
+                //string dateAct = DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day;
 
-                string consulta_1 = "SELECT* FROM ExportTurnos WHERE convert(date, FechaHora)";
-                string consulta_2 = "convert(date, GETDATE())";
-
-                if (resultado == 0)
+                if (ddlMostrar.SelectedValue != "Todos")
                 {
-                    lblTotalTurnos.Text = "(-)";
-                    ddlFiltroBuscar.SelectedValue = "0";
-                    txtBuscarFiltro.Text = "";
-                    dgvTurnos.Visible = false;
-                    btnExportExcel.Visible = false;
+                    txtFecha.Visible = false;
+                    txtCuitDni.Visible = false;
+                    txtPatente.Visible = false;
+                    ddlHoraTurno.Visible = false;
+                    btnUpdate.Visible = false;
+                    btnDelete.Visible = false;
+                    btnCompletarTurno.Visible = false;
+
+                    string consulta_1 = "SELECT* FROM ExportTurnos WHERE convert(date, FechaHora)";
+                    string consulta_2 = "convert(date, GETDATE())";
+
+                    if (resultado == 0)
+                    {
+                        lblTotalTurnos.Text = "(-)";
+                        ddlFiltroBuscar.SelectedValue = "0";
+                        txtBuscarFiltro.Text = "";
+                        dgvTurnos.Visible = false;
+                        btnExportExcel.Visible = false;
+                    }
+                    else
+                    {
+                        btnExportExcel.Visible = true;
+                        dgvTurnos.Visible = true;
+
+                        if (seleccion == "Hoy")
+                        {
+                            lblTotalTurnos.Text = "(Total = " + resultado + ")";
+
+                            string selectTurnosHoy = consulta_1 + " = " + consulta_2;
+
+                            dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
+                            dgvTurnos.DataBind();
+
+                            btnExportExcel.Enabled = true;
+                            btnExportExcel.Visible = true;
+                            dgvTurnos.Visible = true;
+                            ddlFiltroBuscar.SelectedValue = "0";
+                            txtBuscarFiltro.Text = "";
+                        }
+                        else if (seleccion == "Completados")
+                        {
+                            lblTotalTurnos.Text = "(Total = " + resultado + ")";
+
+                            string selectTurnosHoy = "SELECT * FROM ExportTurnos WHERE Estado = 'Completado'";
+
+                            dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
+                            dgvTurnos.DataBind();
+
+                            btnExportExcel.Enabled = true;
+                            btnExportExcel.Visible = true;
+                            dgvTurnos.Visible = true;
+                            ddlFiltroBuscar.SelectedValue = "0";
+                            txtBuscarFiltro.Text = "";
+                        }
+                        else if (seleccion == "Futuros")
+                        {
+                            lblTotalTurnos.Text = "(Total = " + resultado + ")";
+
+                            string selectTurnosHoy = consulta_1 + " > " + consulta_2;
+
+                            dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
+                            dgvTurnos.DataBind();
+
+                            btnExportExcel.Enabled = true;
+                            btnExportExcel.Visible = true;
+                            dgvTurnos.Visible = true;
+                            ddlFiltroBuscar.SelectedValue = "0";
+                            txtBuscarFiltro.Text = "";
+                        }
+                        else //Pendientes
+                        {
+                            lblTotalTurnos.Text = "(Total = " + resultado + ")";
+
+                            string selectTurnosPendientes = "SELECT * FROM ExportTurnos WHERE Estado = 'Pendiente'";
+
+                            dgvTurnos.DataSource = sentencia.DSET(selectTurnosPendientes);
+                            dgvTurnos.DataBind();
+
+                            btnExportExcel.Enabled = true;
+                            btnExportExcel.Visible = true;
+                            dgvTurnos.Visible = true;
+                            ddlFiltroBuscar.SelectedValue = "0";
+                            txtBuscarFiltro.Text = "";
+                        }
+                    }
                 }
                 else
                 {
-                    btnExportExcel.Visible = true;
-                    dgvTurnos.Visible = true;
+                    lblTotalTurnos.Text = "(Total = " + resultado + ")";
 
-                    if (seleccion == "Hoy")
-                    {
-                        lblTotalTurnos.Text = "(Total = " + resultado + ")";
-
-                        string selectTurnosHoy = consulta_1 + " = " + consulta_2;
-
-                        dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
-                        dgvTurnos.DataBind();
-
-                        btnExportExcel.Enabled = true;
-                        btnExportExcel.Visible = true;
-                        dgvTurnos.Visible = true;
-                        ddlFiltroBuscar.SelectedValue = "0";
-                        txtBuscarFiltro.Text = "";
-                    }
-                    else if (seleccion == "Completados")
-                    {
-                        lblTotalTurnos.Text = "(Total = " + resultado + ")";
-
-                        string selectTurnosHoy = "SELECT * FROM ExportTurnos WHERE Estado = 'Completado'";
-
-                        dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
-                        dgvTurnos.DataBind();
-
-                        btnExportExcel.Enabled = true;
-                        btnExportExcel.Visible = true;
-                        dgvTurnos.Visible = true;
-                        ddlFiltroBuscar.SelectedValue = "0";
-                        txtBuscarFiltro.Text = "";
-                    }
-                    else if (seleccion == "Futuros")
-                    {
-                        lblTotalTurnos.Text = "(Total = " + resultado + ")";
-
-                        string selectTurnosHoy = consulta_1 + " > " + consulta_2;
-
-                        dgvTurnos.DataSource = sentencia.DSET(selectTurnosHoy);
-                        dgvTurnos.DataBind();
-
-                        btnExportExcel.Enabled = true;
-                        btnExportExcel.Visible = true;
-                        dgvTurnos.Visible = true;
-                        ddlFiltroBuscar.SelectedValue = "0";
-                        txtBuscarFiltro.Text = "";
-                    }
-                    else //Pendientes
-                    {
-                        lblTotalTurnos.Text = "(Total = " + resultado + ")";
-
-                        string selectTurnosPendientes = "SELECT * FROM ExportTurnos WHERE Estado = 'Pendiente'";
-
-                        dgvTurnos.DataSource = sentencia.DSET(selectTurnosPendientes);
-                        dgvTurnos.DataBind();
-
-                        btnExportExcel.Enabled = true;
-                        btnExportExcel.Visible = true;
-                        dgvTurnos.Visible = true;
-                        ddlFiltroBuscar.SelectedValue = "0";
-                        txtBuscarFiltro.Text = "";
-                    }
+                    BindData();
                 }
-            }
-            else
-            {
-                lblTotalTurnos.Text = "(Total = " + resultado + ")";
-
-                BindData();
             }
         }
 
@@ -512,6 +516,7 @@ namespace LubriApp
                 btnDelete.Visible = false;
                 btnCompletarTurno.Text = "Completar";
                 btnCompletarTurno.Visible = false;
+                lblTabla.Visible = true;
                 ddlEmpleados.Visible = false;
                 btnUpdate.Visible = false;
                 ddlTiposServicio.Visible = false;
@@ -588,6 +593,7 @@ namespace LubriApp
                         txtBuscarFiltro.Text = "";
                         btnDelete.Visible = true;
                         btnCompletarTurno.Visible = true;
+                        lblTabla.Visible = false;
 
                         //CARGAR DDL HORARIOS DENTRO DE POPUP
                         string selectddl = "select * from HorariosLunesViernes";
@@ -708,6 +714,7 @@ namespace LubriApp
                 sentencia.IUD("DELETE FROM Turnos WHERE ID = " + IdTurno);
 
                 Session.Add("IdTurno", "null");
+                lblTabla.Visible = true;
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
                 "alert('Turno cancelado con éxito.')", true);
@@ -886,6 +893,7 @@ namespace LubriApp
                                 sentencia.IUD(updateTurno);
 
                                 Session.Add("IdTurno", "null");
+                                lblTabla.Visible = true;
 
                                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
                                 "alert('Turno modificado con éxito.')", true);
@@ -1052,6 +1060,7 @@ namespace LubriApp
                                 sentencia.IUD(completarTurno);
 
                                 Session.Add("IdTurno", "null");
+                                lblTabla.Visible = true;
 
                                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
                                 "alert('Turno completado y servicio añadido con éxito.')", true);
