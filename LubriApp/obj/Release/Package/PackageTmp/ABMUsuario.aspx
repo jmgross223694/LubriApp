@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMUsuario.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.ABMUsuario_aspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMUsuario.aspx.cs" Inherits="LubriApp.ABMUsuario_aspx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <style>
@@ -16,32 +16,33 @@
         <div>               
             <div class="form-group stl-frm-log">
                 <label for="exampleInputEmail1">Nuevo Usuario</label>
-                <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" placeholder="Nuevo Usuario" />
+                <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" placeholder="Usuario" />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="*****" type="password" />       
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Contraseña" type="password" />       
                 <label for="exampleInputPassword1">Repita su Contraseña</label>
-                <asp:TextBox ID="txtPassword2" runat="server" CssClass="form-control" placeholder="*****" type="password" />
+                <asp:TextBox ID="txtPassword2" runat="server" CssClass="form-control" placeholder="Repita contraseña" type="password" />
                 <small id="emailHelp" class="form-text text-muted">Su contraseña no será compartida con nadie.</small>
             </div>
             <div>
                 <label for="exampleInputEmail1">Mail</label>
                 <asp:TextBox ID="mail" runat="server" CssClass="form-control" placeholder="Mail" />
             </div>
+            <br />
             <label for="exampleInputPassword1">Tipo de Usuario</label>
             <div>
-            <asp:DropDownList ID="ddlTipoUsuario" runat="server" AppendDataBoundItems="true" ToolTip="Tipo de Producto">
+            <asp:DropDownList ID="ddlTipoUsuario" runat="server" AppendDataBoundItems="true" ToolTip="Tipo de Producto" Style="width: 280px;">
                 <asp:ListItem Value="0">Tipo Usuario</asp:ListItem>
             </asp:DropDownList>
             </div>
-            <br />
-            <asp:Button ID="btnRegistrar" runat="server" OnClick="btnRegistrar_Click" CssClass="btn btn-primary" Text="Registrar" />
+            <br /><br />
+            <asp:Button ID="btnRegistrar" runat="server" OnClick="btnRegistrar_Click" CssClass="btn btn-primary btn-registrar-usuario" Text="Registrar Usuario" />
                          
         </div>
     </center>
 
-    <br /><br /><br />
+    <br /><br />
 
     <Button ID="btnAbrirPopUp" class="btn-ver-todos-usuarios" >Ver todos</Button>
 

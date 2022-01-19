@@ -79,3 +79,4 @@ C:\Users\Juanma\Desktop\GitHub\LubriApp\LubriApp\obj\Debug\LubriApp.csproj.Assem
 C:\Users\Juanma\Desktop\GitHub\LubriApp\LubriApp\obj\Debug\LubriApp.csproj.CoreCompileInputs.cache
 C:\Users\Juanma\Desktop\GitHub\LubriApp\LubriApp\obj\Debug\LubriApp.dll
 C:\Users\Juanma\Desktop\GitHub\LubriApp\LubriApp\obj\Debug\LubriApp.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\LubriApp\obj\Debug\LubriApp.csproj.CopyComplete

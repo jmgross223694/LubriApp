@@ -42,15 +42,6 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.ImageButton imgBtnBuscarFiltro;
 
         /// <summary>
-        /// Control ddlMostrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
-
-        /// <summary>
         /// Control txtBorrarServiciosPorPatente.
         /// </summary>
         /// <remarks>
@@ -258,22 +249,22 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado2;
 
         /// <summary>
-        /// Control btnExportExcel.
+        /// Control ddlMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportExcel;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
 
         /// <summary>
-        /// Control btnExportHistoricoServicios.
+        /// Control lblTotalServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportHistoricoServicios;
+        protected global::System.Web.UI.WebControls.Label lblTotalServicios;
 
         /// <summary>
         /// Control dgvHistoricoServicios.
@@ -310,5 +301,23 @@ namespace LubriApp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource ExportServicios;
+
+        /// <summary>
+        /// Control btnExportExcel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportExcel;
+
+        /// <summary>
+        /// Control btnExportHistoricoServicios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportHistoricoServicios;
     }
 }

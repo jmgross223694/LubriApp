@@ -9,3 +9,14 @@ C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Se
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.dll
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.pdb
 C:\Users\Juanma\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Release\Servicios.csproj.CopyComplete
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Release\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Release\Servicios.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Release\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Release\Servicios.csproj.CopyComplete
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Release\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Release\Servicios.pdb

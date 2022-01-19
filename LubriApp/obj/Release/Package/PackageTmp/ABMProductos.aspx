@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMProductos.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.ABMProductos" EnableEventValidation = "false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMProductos.aspx.cs" Inherits="LubriApp.ABMProductos" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1 class="h1-abm">ABM - Productos</h1>
@@ -163,10 +163,8 @@
 
     </div>
 
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-prod" OnClick="btnExportExcel_Click" />
-
     <center>
-        <asp:GridView ID="dgvInventario" runat="server" align="center" AllowSorting="true" OnSorting="dgvInventario_Sorting" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod dgv-abm-inventario table table-responsive table-striped" AllowPaging="True" OnPageIndexChanging="dgvInventario_PageIndexChanging">
+        <asp:GridView ID="dgvInventario" runat="server" align="center" AllowSorting="true" OnSorting="dgvInventario_Sorting" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" AutoGenerateColumns="False" CssClass="dgv-abm-prod dgv-abm-inventario table table-responsive table-striped" PageSize="10" AllowPaging="True" OnPageIndexChanging="dgvInventario_PageIndexChanging">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="EAN" HeaderText="EAN" SortExpression="EAN" />
@@ -204,6 +202,12 @@
         <asp:SqlDataSource ID="ExportInventario" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportInventario] ORDER BY [Stock]"></asp:SqlDataSource>
     </center>
 
+    <br />
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-prod" OnClick="btnExportExcel_Click" />
+
+    <br /><br />
+
     <script>
         function solonumeros(e) {
             var key;
@@ -215,8 +219,6 @@
     </script>
 
     <script>
-
-
 
         var btnAbrirPopup = document.getElementById('btnAddNewProduct'),
             overlay = document.getElementById('overlay'),

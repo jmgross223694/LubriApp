@@ -92,7 +92,7 @@ namespace LubriApp
                     if (cuitDni == "vacio")
                     {
                         int cantVehiculos = 0;
-                        string patente = txtPatente.Text;
+                        string patente = txtPatente.Text.ToUpper();
                         string validarPatente = "SELECT ISNULL(COUNT(*), 0) Cantidad FROM Vehiculos WHERE Patente = '" + patente + "'";
                         AccesoDatos datos4 = new AccesoDatos();
 

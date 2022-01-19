@@ -17,6 +17,7 @@ namespace LubriApp
             
             if (!IsPostBack)
             {
+                contarServicios();
                 BindData();
             }
         }
@@ -27,6 +28,40 @@ namespace LubriApp
             {
                 Session.Add("error", "Para ingresar a esta página debes estar logueado.");
                 Response.Redirect("Error.aspx", false);
+            }
+        }
+
+        private void contarServicios()
+        {
+            string consulta = "SELECT isnull(COUNT(*),0) Cantidad FROM Servicios";
+            int cantidad = 0;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta(consulta);
+                datos.EjecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    cantidad = Convert.ToInt32(datos.Lector["Cantidad"]);
+                }
+                if (cantidad != 0)
+                {
+                    lblTotalServicios.Text = "(Total = " + cantidad + ")";
+                    btnExportExcel.Visible = true;
+                }
+                else
+                {
+                    lblTotalServicios.Text = "(-)";
+                    btnExportExcel.Visible = false;
+                }
+            }
+            catch
+            {
+                lblTotalServicios.Text = "(-)";
+            }
+            finally
+            {
+                datos.CerrarConexion();
             }
         }
 
@@ -41,9 +76,10 @@ namespace LubriApp
             AccesoDatos sentencia7 = new AccesoDatos();
 
             txtBorrarServiciosPorPatente.Visible = false;
+            btnBorrarServiciosPorPatente.Text = "Borrar servicios por patente";
             ddlFiltroBuscar.SelectedValue = "0";
             txtBuscarFiltro.Text = "";
-            ddlMostrar.SelectedValue = "Todos";
+            ddlMostrar.SelectedValue = "0";
 
             string selectServicios = "SELECT * FROM ExportServicios ORDER BY Fecha DESC, Hora DESC";
             string selectDdlTiposServicio = "SELECT ID as ID, Descripcion as Descripcion FROM TiposServicio WHERE Estado = 1";
@@ -51,8 +87,6 @@ namespace LubriApp
             string selectDdlEmpleados = "SELECT ID as ID, ApeNom as Empleado FROM Empleados";
 
             int resultado = ContarResultadosDB("Todos", "null", "null", "null");
-
-            mostrarCantidadServicios(resultado, "Todos");
 
             ocultarMostrarCamposModificarEliminar("ocultar");
 
@@ -109,7 +143,7 @@ namespace LubriApp
                 mostrarScriptMensaje("Error en la base de datos.");
             }
 
-            string selectHistoricoTurnos = "SELECT * FROM ExportHistoricoServicios ORDER BY FechaModificado DESC, HoraModificado DESC, ID ASC";
+            string selectHistoricoTurnos = "SELECT * FROM ExportHistoricoServicios ORDER BY FechaModificado DESC, HoraModificado DESC";
 
             dgvHistoricoServicios.DataSource = sentencia.DSET(selectHistoricoTurnos);
             dgvHistoricoServicios.DataBind();
@@ -198,25 +232,68 @@ namespace LubriApp
 
         protected void imgBtnBuscarFiltro_Click(object sender, ImageClickEventArgs e)
         {
+            txtBorrarServiciosPorPatente.Visible = false;
+            btnBorrarServiciosPorPatente.Text = "Borrar servicios por patente";
+
             string valor = txtBuscarFiltro.Text.ToUpper();
             string campo = ddlFiltroBuscar.SelectedValue.ToString();
 
-            if (campo == "0" && valor == "")
+            if (valor == "")
             {
-                mostrarScriptMensaje("Filtro de búsqueda no seleccionado y filtro de texto vacío.");
-
+                contarServicios();
                 BindData();
-            }
-            else if (campo == "0")
-            {
-                mostrarScriptMensaje("Filtro de búsqueda no seleccionado.");
-            }
-            else if (valor == "")
-            {
-                mostrarScriptMensaje("Filtro de texto vacío.");
             }
             else
             {
+                if (campo == "0")
+                {
+                    campo = "ID";
+                }
+
+                int cantServiciosEncontrados = 0;
+                string consulta = "";
+
+                if (campo == "ID")
+                {
+                    consulta = "SELECT isnull(COUNT(*),0) Cantidad FROM ExportServicios WHERE ID = " + valor;
+                }
+                else
+                {
+                    consulta = "SELECT isnull(COUNT(*),0) Cantidad FROM ExportServicios WHERE " + campo + " LIKE '%" + valor + "%'";
+                }
+
+                AccesoDatos datos2 = new AccesoDatos();
+                try
+                {
+                    datos2.SetearConsulta(consulta);
+                    datos2.EjecutarLectura();
+
+                    if (datos2.Lector.Read())
+                    {
+                        cantServiciosEncontrados = Convert.ToInt32(datos2.Lector["Cantidad"]);
+                    }
+
+                    if (cantServiciosEncontrados != 0)
+                    {
+                        btnExportExcel.Visible = true;
+                        lblTotalServicios.Text = "(Total = " + cantServiciosEncontrados + ")";
+                    }
+                    else
+                    {
+                        btnExportExcel.Visible = false;
+                        lblTotalServicios.Text = "(-)";
+                    }
+                }
+                catch
+                {
+                    btnExportExcel.Visible = false;
+                    lblTotalServicios.Text = "(-)";
+                }
+                finally
+                {
+                    datos2.CerrarConexion();
+                }
+
                 string comillas = "y", tabla = "ExportServicios";
                 if (campo == "ID") { comillas = "n"; }
 
@@ -226,10 +303,11 @@ namespace LubriApp
                 {
                     if (campo == "ID")
                     {
-                        mostrarScriptMensaje("Se muestra a continuación, el Servicio con ID = " + valor);
+                        btnExportExcel.Visible = true;
+                        lblTotalServicios.Text = "(Total = " + resultado + ")";
 
                         string selectResultados = "SELECT * FROM " + tabla + " WHERE " + campo + " = " + valor;
-                        
+
                         AccesoDatos sentencia = new AccesoDatos();
                         AccesoDatos datos = new AccesoDatos();
 
@@ -289,12 +367,6 @@ namespace LubriApp
 
                         ocultarMostrarCamposModificarEliminar("ocultar");
 
-                        string texto1 = "encontaron ", texto2 = " servicios";
-
-                        if (resultado == 1) { texto1 = "encontró "; texto2 = " servicio"; }
-
-                        mostrarScriptMensaje("Se " + texto1 + resultado + texto2);
-
                         string selectResultados = "SELECT * FROM " + tabla + " WHERE " + campo + " LIKE '%" + valor + "%'";
 
                         AccesoDatos sentencia = new AccesoDatos();
@@ -312,7 +384,8 @@ namespace LubriApp
                 }
                 else
                 {
-                    mostrarScriptMensaje("Su búsqueda no produjo ningún resultado.");
+                    btnExportExcel.Visible = false;
+                    lblTotalServicios.Text = "(-)";
                 }
             }
         }
@@ -322,6 +395,7 @@ namespace LubriApp
             if (txtBorrarServiciosPorPatente.Visible == false)
             {
                 txtBorrarServiciosPorPatente.Visible = true;
+                btnBorrarServiciosPorPatente.Text = "Eliminar";
             }
             else
             {
@@ -373,175 +447,64 @@ namespace LubriApp
             "alert('" + mensaje + "')", true);
         }
 
-        public void mostrarCantidadServicios(int cantidad, string referencia)
+        protected void ddlMostrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cantidad != 0)
+            txtBorrarServiciosPorPatente.Visible = false;
+            btnBorrarServiciosPorPatente.Text = "Borrar servicios por patente";
+
+            if (ddlMostrar.SelectedValue != "0")
             {
-                if (cantidad > 1)
+                AccesoDatos sentencia = new AccesoDatos();
+
+                string seleccion = ddlMostrar.SelectedValue.ToString();
+                int resultado = ContarResultadosDB("Todos", "null", "null", "null");
+
+                string consulta = "";
+                string consulta_1 = "SELECT * FROM ExportServicios WHERE CONVERT(date, FechaHora)";
+                string consulta_2 = "Convert(date, GETDATE())";
+
+                if (resultado != 0)
                 {
-                    if (referencia == "Todos")
+                    if (seleccion == "Todos")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontraron " + cantidad + " servicios, cargados en el sistema.')", true);
+                        resultado = ContarResultadosDB(seleccion, "null", "null", "null");
+                        consulta = "SELECT * FROM ExportServicios";
                     }
-                    else if (referencia == "Hoy")
+                    else if (seleccion == "Hoy")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontraron " + cantidad + " servicios, cargados hoy al sistema.')", true);
+                        resultado = ContarResultadosDB(seleccion, "null", "null", "null");
+                        consulta = consulta_1 + " = " + consulta_2 + "ORDER BY Hora DESC";
                     }
-                    else if (referencia == "Completados")
+                    else if (seleccion == "Completados")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontraron " + cantidad + " servicios completados, cargados en el sistema.')", true);
+                        resultado = ContarResultadosDB(seleccion, "null", "null", "null");
+                        consulta = "SELECT * FROM ExportServicios WHERE Estado = 'Completado'";
                     }
-                    else if (referencia == "Pendientes")
+                    else if (seleccion == "Futuros")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontraron " + cantidad + " servicios pendientes, cargados en el sistema.')", true);
+                        resultado = ContarResultadosDB(seleccion, "null", "null", "null");
+                        consulta = consulta_1 + " > " + consulta_2;
                     }
-                    else if (referencia == "Futuros")
+                    else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontraron " + cantidad + " servicios futuros, cargados en el sistema.')", true);
+                        resultado = ContarResultadosDB(seleccion, "null", "null", "null");
+                        consulta = "SELECT * FROM ExportServicios WHERE Estado = 'Pendiente'";
                     }
+                   
+                    lblTotalServicios.Text = "(Total = " + resultado + ")";
+                    btnExportExcel.Visible = true;
+
+                    if (resultado == 0) { btnExportExcel.Visible = false; lblTotalServicios.Text = "(-)"; }
+
+                    dgvServicios.DataSource = sentencia.DSET(consulta);
+                    dgvServicios.DataBind();
                 }
                 else
                 {
-                    if (referencia == "Todos")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontró " + cantidad + " solo servicio, cargado en el sistema.')", true);
-                    }
-                    else if (referencia == "Hoy")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontró " + cantidad + " solo servicio, cargado hoy al sistema.')", true);
-                    }
-                    else if (referencia == "Completados")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontró " + cantidad + " solo servicio completado, cargado en el sistema.')", true);
-                    }
-                    else if (referencia == "Pendientes")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontró " + cantidad + " solo servicio pendiente, cargado en el sistema.')", true);
-                    }
-                    else if (referencia == "Futuros")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Se encontró " + cantidad + " solo servicio futuro, cargado en el sistema.')", true);
-                    }
+                    lblTotalServicios.Text = "(-)";
+                    btnExportExcel.Visible = false;
+                    BindData();
                 }
-            }
-            else
-            {
-                if (referencia == "Todos")
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    "alert('Todavía no hay servicios cargados en el sistema.')", true);
-                }
-                else if (referencia == "Hoy")
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    "alert('Por el momento, hoy no se cargaron servicios en el sistema.')", true);
-                }
-                else if (referencia == "Completados")
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    "alert('Por el momento, no hay servicios completados cargados en el sistema.')", true);
-                }
-                else if (referencia == "Pendientes")
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    "alert('Por el momento, no hay servicios pendientes cargados en el sistema.')", true);
-                }
-                else if (referencia == "Futuros")
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    "alert('Todavía no hay servicios futuros cargados en el sistema.')", true);
-                }
-            }
-        }
-
-        protected void ddlMostrar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AccesoDatos sentencia = new AccesoDatos();
-
-            string seleccion = ddlMostrar.SelectedValue.ToString();
-            int resultado = ContarResultadosDB("Todos", "null", "null", "null");
-
-            string consulta_1 = "SELECT * FROM ExportServicios ";
-            string consulta_2 = "WHERE TRANSLATE(Fecha,'-','/')";
-            string consulta_3 = "GETDATE()";
-
-            if (resultado != 0)
-            {
-                switch (seleccion)
-                {
-                    case ("Todos"):
-                        {
-                            resultado = ContarResultadosDB(seleccion, "null", "null", "null");
-                            string selectTodos = "SELECT * FROM ExportServicios";
-
-                            dgvServicios.DataSource = sentencia.DSET(selectTodos);
-                            dgvServicios.DataBind();
-
-                            mostrarCantidadServicios(resultado, seleccion);
-                        }
-                        break;
-                    case ("Hoy"):
-                        {
-                            resultado = ContarResultadosDB(seleccion, "null", "null", "null");
-                            string selectTodos = "SELECT * FROM ExportServicios WHERE CONVERT(date, Fecha, 105) = " +
-                                                 "CONVERT(date, GETDATE(), 105) ORDER BY Hora DESC";
-
-                            dgvServicios.DataSource = sentencia.DSET(selectTodos);
-                            dgvServicios.DataBind();
-
-                            mostrarCantidadServicios(resultado, seleccion);
-                        }
-                        break;
-                    case ("Completados"):
-                        {
-                            resultado = ContarResultadosDB(seleccion, "null", "null", "null");
-                            string selectTodos = consulta_1  + " WHERE Estado = 'Completado'";
-
-                            dgvServicios.DataSource = sentencia.DSET(selectTodos);
-                            dgvServicios.DataBind();
-
-                            mostrarCantidadServicios(resultado, seleccion);
-                        }
-                        break;
-                    case ("Futuros"):
-                        {
-                            resultado = ContarResultadosDB(seleccion, "null", "null", "null");
-                            string selectTodos = consulta_1 + consulta_2 + " > " + consulta_3;
-
-                            dgvServicios.DataSource = sentencia.DSET(selectTodos);
-                            dgvServicios.DataBind();
-
-                            mostrarCantidadServicios(resultado, seleccion);
-                        }
-                        break;
-                    case ("Pendientes"):
-                        {
-                            resultado = ContarResultadosDB(seleccion, "null", "null", "null");
-                            string selectTodos = consulta_1 + " WHERE Estado = 'Pendiente'";
-
-                            dgvServicios.DataSource = sentencia.DSET(selectTodos);
-                            dgvServicios.DataBind();
-
-                            mostrarCantidadServicios(resultado, seleccion);
-                        }
-                        break;
-                }
-            }
-            else
-            {
-                mostrarCantidadServicios(resultado, "Todos");
-
-                BindData();
             }
         }
 
@@ -657,14 +620,16 @@ namespace LubriApp
             return Resultado;
         }
 
-        protected int ContarResultadosDB_Insert(string campo1, string valor1, string campo2, string valor2, string campo3, string valor3, string campo4, string valor4)
+        protected int ContarResultadosDB_Insert(string campo1, DateTime fecha, string campo2, string valor2, string campo3, string valor3, string campo4, string valor4)
         {
             AccesoDatos datos = new AccesoDatos();
 
             int Resultado = 0;
 
-            string selectDB = "SELECT isnull(COUNT(*), 0) AS Cantidad FROM ExportServicios WHERE " + campo1 + " = TRANSLATE('" + valor1 + "','/','-') AND " + campo2 + " = '" + valor2 + "' AND " + 
-                                                                              campo3 + " = '" + valor3 + "' AND " + campo4 + " = '" + valor4 + "'";
+            string valor1 = fecha.Year + "-" + fecha.Month + "-" + fecha.Day;
+
+            string selectDB = "SELECT isnull(COUNT(*), 0) AS Cantidad FROM ExportServicios WHERE " + campo1 + " = '" + valor1  + "' AND " + 
+                campo2 + " = '" + valor2 + "' AND " + campo3 + " = '" + valor3 + "' AND " + campo4 + " = '" + valor4 + "'";
 
             try
             {
@@ -782,7 +747,7 @@ namespace LubriApp
                 if (FechaServicio.Date <= DateTime.Now.Date || ddlEstado.SelectedValue.ToString() != "Completado")
                 {
                     string ID = Session["IdServicio"].ToString();
-                    string FechaHora = txtFecha.Text + " " + txtHora.Text;
+                    string FechaHora = FechaServicio.Year + "-" + FechaServicio.Month + "-" + FechaServicio.Day + " " + txtHora.Text;
                     string Patente = txtPatente.Text;
                     string Comentarios = txtComentarios.Text;
                     string Estado = ddlEstado.SelectedValue.ToString();
@@ -848,9 +813,9 @@ namespace LubriApp
                     AccesoDatos datos2 = new AccesoDatos();
 
                     string crearAvisoServicio = null;
-                    if (Estado == "Completado" && Servicio == "Revisión de filtros"
-                        || Servicio == "Revisión de aceite y filtros"
-                        || Servicio == "Revisión de aceite")
+                    if (Estado == "Completado" && Servicio == "Filtros"
+                        || Servicio == "Aceite y filtros"
+                        || Servicio == "Aceite")
                     {
                         crearAvisoServicio = "INSERT INTO AvisosServicios(IdCliente, IdServicio, IdTipoServicio, Patente, FechaRealizado, FechaAviso)" +
                         "values(" + IdCliente + ", " + ID + ", " + IdTipo + ", '" + Patente + "', '" + FechaHora + "', '" + FechaAvisoCorta + "')";
@@ -902,9 +867,9 @@ namespace LubriApp
                                 sentencia.IUD(updateServicio);
 
                                 if (resultado == 0 && Estado == "Completado"
-                                    && Servicio == "Revisión de filtros"
-                                    || Servicio == "Revisión de aceite y filtros"
-                                    || Servicio == "Revisión de aceite")
+                                    && Servicio == "Filtros"
+                                    || Servicio == "Aceite y filtros"
+                                    || Servicio == "Aceite")
                                 {
                                     sentencia2.IUD(crearAvisoServicio);
                                 }
@@ -949,14 +914,19 @@ namespace LubriApp
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtFecha2.Text == "" || txtHora.Text == "" || txtPatente2.Text == "" || ddlTiposServicio2.SelectedValue == "0"
+            if (txtFecha2.Text == "" || txtHora2.Text == "" || txtPatente2.Text == "" || ddlTiposServicio2.SelectedValue == "0"
                 || ddlClientes2.SelectedValue == "0" || ddlEmpleados2.SelectedValue == "0" || ddlEstado2.SelectedValue == "0")
             {
                 mostrarScriptMensaje("Hay campos vacíos o sin seleccionar. Por favor revise nuevamente.");
             }
             else
             {
-                DateTime FechaHora = Convert.ToDateTime(txtFecha2.Text + ' ' + txtHora2.Text);
+                DateTime FechaHora = Convert.ToDateTime(txtFecha2.Text);
+                if (!txtHora2.Text.Contains(":") && txtHora2.Text.Length <= 2)
+                {
+                    txtHora2.Text = txtHora2.Text + ":00";
+                }
+                string FechaHora2 = FechaHora.Year + "-" + FechaHora.Month + "-" + FechaHora.Day + " " + txtHora2.Text;
                 string Patente = txtPatente2.Text;
                 string Comentarios = txtComentarios2.Text;
                 string Estado = ddlEstado2.SelectedValue.ToString();
@@ -966,12 +936,18 @@ namespace LubriApp
 
                 //No se puede agregar un servicio repitiendo fecha, hora, tipo de servicio y patente.
 
-                int resultado = ContarResultadosDB_Insert("Fecha", FechaHora.ToShortDateString(), "Hora", txtHora2.Text, "IdTipo", IdTipo, "Patente", Patente);
+                string fechaConsultaResultado = FechaHora.Day + "/" + FechaHora.Month + "/" + FechaHora.Year;
+                if (FechaHora.Month <= 9)
+                {
+                    fechaConsultaResultado = FechaHora.Day + "/0" + FechaHora.Month + "/" + FechaHora.Year;
+                }
+
+                int resultado = ContarResultadosDB_Insert("convert(date,FechaHora)", FechaHora, "Hora", txtHora2.Text, "IdTipo", IdTipo, "Patente", Patente);
 
                 if (resultado == 0)
                 {
 
-                    string insertServicio = "EXEC INSERT_SERVICIO '" + FechaHora + "', '" + Patente + "', '" + Comentarios + "', '" + Estado + "', " +
+                    string insertServicio = "EXEC INSERT_SERVICIO '" + FechaHora2 + "', '" + Patente + "', '" + Comentarios + "', '" + Estado + "', " +
                                                                     IdTipo + ", " + IdCliente + ", " + IdEmpleado;
 
                     AccesoDatos sentencia = new AccesoDatos();
@@ -1041,9 +1017,9 @@ namespace LubriApp
 
         }
 
-        protected void dgvHistoricoServicios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void dgvServicios_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            dgvHistoricoServicios.PageIndex = e.NewPageIndex;
+            dgvServicios.PageIndex = e.NewPageIndex;
             BindData();
         }
     }

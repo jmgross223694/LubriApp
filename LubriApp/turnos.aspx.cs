@@ -16,6 +16,11 @@ namespace LubriApp
         {
             if (!IsPostBack)
             {
+                Session.Add("CuitDniIngresado", "vacío");
+
+                lblMensaje.Visible = false;
+                lblCuitDni.Text = "Ingrese su CUIT / DNI:";
+
                 BindData();
 
                 string selectDdlTiposServicio = "SELECT * FROM TiposServicio " +
@@ -47,11 +52,6 @@ namespace LubriApp
             txtCuitDni.Enabled = true;
             btnBuscarCuitDni.Text = "Siguiente paso";
             btnAgregarVehículo.Visible = false;
-
-            string selectDgvTurnos = "SELECT * FROM ExportTurnos ORDER BY ID ASC";
-
-            dgvTurnos.DataSource = sentencia.DSET(selectDgvTurnos);
-            dgvTurnos.DataBind();
         }
 
         protected void calendarioTurnos_DayRender(object sender, DayRenderEventArgs e)
@@ -88,6 +88,8 @@ namespace LubriApp
             AccesoDatos datos = new AccesoDatos();
             AccesoDatos datos2 = new AccesoDatos();
 
+            lblMensaje.Visible = false;
+            lblMensaje.Text = "-";
             lblHora.Visible = true;
             ddlHoraTurno.Visible = true;
             ddlTiposServicio.Visible = true;
@@ -173,11 +175,100 @@ namespace LubriApp
 
         protected void btnBuscarCuitDni_Click(object sender, EventArgs e)
         {
+            lblMensaje.Visible = false;
+            lblMensaje.Text = "-";
+
             AccesoDatos datos = new AccesoDatos();
             AccesoDatos datos2 = new AccesoDatos();
             try
             {
-                if (btnBuscarCuitDni.Text == "Confirmar Turno")
+                if (ddlTiposServicio.SelectedValue == "0")
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "No seleccionó un Servicio a realizar.";
+                }
+                else if (txtCuitDni.Text == "")
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "No se ingresó ningún CUIT ó DNI.";
+                    lblCuitDni.Text = "Ingrese su CUIT / DNI:";
+                    ddlVehiculos.DataSource = null;
+                    ddlVehiculos.Visible = false;
+                    btnAgregarVehículo.Visible = false;
+                }
+                else if (txtCuitDni.Text != Session["CuitDniIngresado"].ToString())
+                {
+                    btnBuscarCuitDni.Text = "Siguiente paso";
+                    
+                    Session.Add("CuitDniIngresado", txtCuitDni.Text);
+
+                    lblRegistro.Visible = false;
+                    btnRegistro.Visible = false;
+
+                    string CuitDni = txtCuitDni.Text;
+                    string campo = "ApeNom";
+
+                    if (txtCuitDni.Text.Length > 8) { campo = "RazonSocial"; }
+
+                    int resultadoCliente = ContarResultadosDB_UnaCadena("Clientes", "CUIT_DNI", CuitDni);
+
+                    if (resultadoCliente != 0)
+                    {   //El cliente existe
+                        string selectIdCliente = "SELECT * FROM Clientes WHERE CUIT_DNI = '" + CuitDni + "'";
+                        long IdCliente;
+
+                        datos2.SetearConsulta(selectIdCliente);
+                        datos2.EjecutarLectura();
+
+                        if (datos2.Lector.Read())
+                        {
+                            IdCliente = Convert.ToInt64(datos2.Lector["ID"]);
+                            string clienteEncontrado = (string)datos2.Lector[campo];
+
+                            lblCuitDni.Text = clienteEncontrado;
+
+                            int resultado2 = 0;
+
+                            resultado2 = ContarResultadosDB_UnaVariable("Vehiculos", "IdCliente", IdCliente);
+
+                            if (resultado2 != 0) //hay al menos un auto cargado
+                            {
+                                string selectDdlVehiculos = "SELECT * FROM Vehiculos WHERE IdCliente = " + IdCliente;
+
+                                ddlVehiculos.Items.Clear();
+                                ddlVehiculos.Items.Add("Vehículos");
+                                ddlVehiculos.DataSource = sentencia.DSET(selectDdlVehiculos);
+                                ddlVehiculos.DataMember = "datos";
+                                ddlVehiculos.DataTextField = "Patente";
+                                ddlVehiculos.DataValueField = "ID";
+                                ddlVehiculos.DataBind();
+
+                                btnBuscarCuitDni.Text = "Confirmar Turno";
+
+                                ddlVehiculos.Visible = true;
+                                btnAgregarVehículo.Visible = true;
+                            }
+                            else
+                            {
+                                lblMensaje.Visible = true;
+                                lblMensaje.Text = "No se encontraron vehículos cargados. Por favor contáctenos.";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "El CUIT/DNI ingresado no existe en el sistema. Si no esta registrado, debe hacer click en el botón Registrarse.";
+                        ddlVehiculos.DataSource = null;
+                        ddlVehiculos.Visible = false;
+                        lblCuitDni.Text = "Ingrese su CUIT / DNI:";
+
+                        btnAgregarVehículo.Visible = false;
+                        lblRegistro.Visible = true;
+                        btnRegistro.Visible = true;
+                    }
+                }
+                else if (btnBuscarCuitDni.Text == "Confirmar Turno")
                 {
                     AccesoDatos datos4 = new AccesoDatos();
                     try
@@ -203,7 +294,7 @@ namespace LubriApp
                             cliente = (string)datos4.Lector[campo];
                         }
 
-                        if (ddlVehiculos.SelectedValue != "Seleccione vehículo")
+                        if (ddlVehiculos.SelectedValue != "Vehículos")
                         {
                             int IdTipoServicio = Convert.ToInt32(ddlTiposServicio.SelectedValue);
                             long IDVehiculo = Convert.ToInt64(ddlVehiculos.SelectedValue);
@@ -223,13 +314,13 @@ namespace LubriApp
                             else if (dia == "Friday") { dia = "Viernes"; }
                             else if (dia == "Saturday") { dia = "Sábado"; }
 
-                            int resultadoTurnos = ContarResultadosDB_DosVariablesUnaCadena("Turnos", "CONVERT(date,FechaHora)", 
+                            int resultadoTurnos = ContarResultadosDB_DosVariablesUnaCadena("Turnos", "CONVERT(date,FechaHora)",
                                 fecha, "IdCliente", IDCliente, "IdVehiculo", IDVehiculo);
 
                             if (resultadoTurnos == 1)
                             {
                                 int IdTurnoExistente = 0;
-                                string selectTurnoExistente = "SELECT ID FROM Turnos WHERE CONVERT(date,FechaHora) = '" + fecha + 
+                                string selectTurnoExistente = "SELECT ID FROM Turnos WHERE CONVERT(date,FechaHora) = '" + fecha +
                                     "' AND IdCliente = " + IDCliente + " AND IdVehiculo = " + IDVehiculo;
 
                                 AccesoDatos datos1 = new AccesoDatos();
@@ -250,18 +341,13 @@ namespace LubriApp
 
                                 if (IdTurnoExistente != 0)
                                 {
-                                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                                    "alert('Usted tiene un turno pendiente para el día " + fecha + ".\\n\\n" +
-                                    "Por cualquier duda o modificaciones sobre el mismo, " +
-                                    "por favor comuníquese con nosotros a la brevedad, " +
-                                    "informándonos el siguiente código de reserva: " + IdTurnoExistente + ".')", true);
+                                    lblMensaje.Visible = true;
+                                    lblMensaje.Text = "Tiene un turno pendiente con los datos ingresados, cuyo código de reserva es " + IdTurnoExistente + ".";
                                 }
                                 else
                                 {
-                                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                                    "alert('Usted tiene un turno pendiente para el día " + fecha + ".\\n\\n" +
-                                    "Por cualquier duda o modificaciones sobre el mismo, " +
-                                    "por favor comuníquese con nosotros a la brevedad.')", true);
+                                    lblMensaje.Visible = true;
+                                    lblMensaje.Text = "Tiene un turno pendiente con los datos ingresados. Si desea modificarlo o cancelarlo, contáctenos.";
                                 }
                             }
                             else
@@ -337,7 +423,7 @@ namespace LubriApp
                                             "indicando su código de reserva." +
                                             "\n\nSaludos." +
                                             "Lubricentro Tony";
-                                            
+
                                         EmailService mailNuevo = new EmailService();
                                         mailNuevo.armarCorreo(mailDestino, asunto, cuerpo);
                                         try
@@ -360,20 +446,20 @@ namespace LubriApp
                                 {
                                     ClientScript.RegisterStartupScript(this.GetType(), "alert",
                                     "alert('No tiene registrado ninguna dirección de mail en el sistema. " +
-                                    "Por favor comuníquese con nosotros para poder enviarle los detalles de su turno.')", true);
+                                    "Por favor contáctenos para poder enviarle los detalles de su turno.')", true);
                                 }
                             }
                         }
                         else
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                            "alert('No seleccionó ningún vehículo.')", true);
+                            lblMensaje.Visible = true;
+                            lblMensaje.Text = "No seleccionó ningún vehículo.";
                         }
                     }
                     catch
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Error al intentar reservar el turno. Por favor contáctenos.')", true);
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "Error al intentar reservar el turno. Por favor contáctenos.";
                     }
                     finally
                     {
@@ -384,16 +470,19 @@ namespace LubriApp
                 {
                     if (txtCuitDni.Text == "")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Debe ingresar un CUIT ó DNI por favor.')", true);
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se ingresó ningún CUIT ó DNI.";
+                        lblCuitDni.Text = "Ingrese su CUIT / DNI:";
                     }
                     if (ddlTiposServicio.SelectedValue == "0")
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Debe seleccionar un Servicio a realizar por favor.')", true);
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No seleccionó el Servicio a realizar.";
                     }
                     else
                     {
+                        Session.Add("CuitDniIngresado", txtCuitDni.Text);
+
                         lblRegistro.Visible = false;
                         btnRegistro.Visible = false;
 
@@ -425,15 +514,10 @@ namespace LubriApp
 
                                 if (resultado2 != 0) //hay al menos un auto cargado
                                 {
-                                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                                    "alert('Bienvenido nuevamente " + clienteEncontrado + ".\\n\\n" +
-                                    "En el próximo paso seleccione por favor el vehículo.\\n\\n" +
-                                    "Si no está en la lista, también puede agregar uno nuevo.')", true);
-
                                     string selectDdlVehiculos = "SELECT * FROM Vehiculos WHERE IdCliente = " + IdCliente;
 
                                     ddlVehiculos.Items.Clear();
-                                    ddlVehiculos.Items.Add("Seleccione vehículo");
+                                    ddlVehiculos.Items.Add("Vehículos");
                                     ddlVehiculos.DataSource = sentencia.DSET(selectDdlVehiculos);
                                     ddlVehiculos.DataMember = "datos";
                                     ddlVehiculos.DataTextField = "Patente";
@@ -441,27 +525,26 @@ namespace LubriApp
                                     ddlVehiculos.DataBind();
 
                                     btnBuscarCuitDni.Text = "Confirmar Turno";
-                                    txtCuitDni.Enabled = false;
-                                    ddlHoraTurno.Enabled = false;
-                                    calendarioTurnos.Enabled = false;
 
                                     ddlVehiculos.Visible = true;
                                     btnAgregarVehículo.Visible = true;
                                 }
                                 else
                                 {
-                                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                                    "alert('No se encontraron vehículos cargados.\\n\\n" +
-                                    "Por favor contáctenos a la brevedad para resolver el problema.')", true);
+                                    lblMensaje.Visible = true;
+                                    lblMensaje.Text = "No poseé vehículos registrados, contáctenos para resolver el problema.";
                                 }
                             }
                         }
                         else
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                            "alert('No se encontraron resultados, revise el CUIT / DNI ingresado.\\n\\n" +
-                            "Si todavía no esta registrado, debe hacerlo por unica vez.')", true);
+                            lblMensaje.Visible = true;
+                            lblMensaje.Text = "El CUIT/DNI ingresado no existe en el sistema. Si no esta registrado, debe hacer click en el botón Registrarse.";
+                            ddlVehiculos.DataSource = null;
+                            ddlVehiculos.Visible = false;
+                            lblCuitDni.Text = "Ingrese su CUIT / DNI:";
 
+                            btnAgregarVehículo.Visible = false;
                             lblRegistro.Visible = true;
                             btnRegistro.Visible = true;
                         }
@@ -470,8 +553,8 @@ namespace LubriApp
             }
             catch
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                "alert('Error al intentar reservar el turno. Por favor reintente nuevamente en unos minutos.')", true);
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "No se pudo reservar el turno. Reintente más tarde o contáctenos.";
             }
             finally
             {
@@ -577,6 +660,7 @@ namespace LubriApp
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             Session.Add("btnRegistroClick", "btnRegistroClick");
+            Session.Add("CuitDniIngresado", txtCuitDni.Text);
 
             Response.Redirect("registroCliente.aspx");
         }
@@ -615,6 +699,8 @@ namespace LubriApp
             Session.Add("Telefono", "vacio");
             Session.Add("Mail", "vacio");
             Session.Add("TipoCliente", "vacio");
+
+            Session.Add("btnRegistroClick", "agregarVehiculo");
 
             Response.Redirect("registroVehiculo.aspx");
         }

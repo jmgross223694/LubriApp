@@ -813,9 +813,9 @@ namespace LubriApp
                     AccesoDatos datos2 = new AccesoDatos();
 
                     string crearAvisoServicio = null;
-                    if (Estado == "Completado" && Servicio == "Revisión de filtros"
-                        || Servicio == "Revisión de aceite y filtros"
-                        || Servicio == "Revisión de aceite")
+                    if (Estado == "Completado" && Servicio == "Filtros"
+                        || Servicio == "Aceite y filtros"
+                        || Servicio == "Aceite")
                     {
                         crearAvisoServicio = "INSERT INTO AvisosServicios(IdCliente, IdServicio, IdTipoServicio, Patente, FechaRealizado, FechaAviso)" +
                         "values(" + IdCliente + ", " + ID + ", " + IdTipo + ", '" + Patente + "', '" + FechaHora + "', '" + FechaAvisoCorta + "')";
@@ -867,9 +867,9 @@ namespace LubriApp
                                 sentencia.IUD(updateServicio);
 
                                 if (resultado == 0 && Estado == "Completado"
-                                    && Servicio == "Revisión de filtros"
-                                    || Servicio == "Revisión de aceite y filtros"
-                                    || Servicio == "Revisión de aceite")
+                                    && Servicio == "Filtros"
+                                    || Servicio == "Aceite y filtros"
+                                    || Servicio == "Aceite")
                                 {
                                     sentencia2.IUD(crearAvisoServicio);
                                 }

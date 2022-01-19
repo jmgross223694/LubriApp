@@ -103,10 +103,10 @@
 
     </div>
 
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-emp" OnClick="btnExportExcel_Click" />
+    <br /><br /><br />
 
     <center>
-        <asp:GridView ID="dgvEmpleados" runat="server" AllowSorting="True" OnSorting="dgvEmpleados_Sorting" AutoGenerateColumns="False" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" CssClass="dgv-abm-prod" AllowPaging="True" OnPageIndexChanging="dgvEmpleados_PageIndexChanging" >
+        <asp:GridView ID="dgvEmpleados" runat="server" AllowSorting="True" OnSorting="dgvEmpleados_Sorting" AutoGenerateColumns="False" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" CssClass="dgv-abm-prod" PageSize="10" AllowPaging="True" OnPageIndexChanging="dgvEmpleados_PageIndexChanging" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Legajo" HeaderText="Legajo" SortExpression="Legajo" />
@@ -130,6 +130,8 @@
         </asp:GridView>
         <asp:SqlDataSource ID="ExportEmpleadosDB" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportEmpleados] ORDER BY [ApeNom], [FechaAlta]"></asp:SqlDataSource>
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-emp" OnClick="btnExportExcel_Click" />
 
     <script>
         function solonumeros(e) {

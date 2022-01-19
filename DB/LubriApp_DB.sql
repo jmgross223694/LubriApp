@@ -177,11 +177,11 @@ create table TiposServicio(
 )
 GO
 
-insert into TiposServicio(Descripcion) values('Revisión de aceite')
-insert into TiposServicio(Descripcion) values('Revisión de filtros')
-insert into TiposServicio(Descripcion) values('Revisión de aceite y filtros')
-insert into TiposServicio(Descripcion) values('Revisión de líquido refrigerante')
-insert into TiposServicio(Descripcion) values('Revisión de líquido de frenos')
+insert into TiposServicio(Descripcion) values('Aceite')
+insert into TiposServicio(Descripcion) values('Filtros')
+insert into TiposServicio(Descripcion) values('Aceite y Filtros')
+insert into TiposServicio(Descripcion) values('Sistema refrigeración')
+insert into TiposServicio(Descripcion) values('Frenos')
 insert into TiposServicio(Descripcion) values('Revisión general')
 GO
 
@@ -689,12 +689,12 @@ EXEC SP_AGREGAR_VEHICULO 'KTJ262', 2, 'Classic', 2011, 2
 GO
 
 insert into Turnos(IdTipoServicio, IdCliente, IdVehiculo, Dia, FechaHora, IDHorario)
-values (1, 1, 1, 'Sábado', '24-09-2022 09:30:00.000', 
+values (1, 1, 1, 'Sábado', '2022-09-24 09:30:00.000', 
 (select ID from HorariosLunesViernes where LunesViernes LIKE '%09:00%'))
 GO
 
 insert into Turnos(IdTipoServicio, IdCliente, IdVehiculo, Dia, FechaHora, IDHorario)
-values (3, 2, 2, 'Viernes', '23-09-2022 10:30:00.000', 
+values (3, 2, 2, 'Viernes', '2022-09-23 10:30:00.000', 
 (select ID from HorariosLunesViernes where LunesViernes LIKE '%09:00%'))
 GO
 
@@ -770,6 +770,7 @@ end
 GO
 
 insert into servicios(PatenteVehiculo, IdTipo, comentarios, idcliente, IdEmpleado) values('AAD123', 2, 'Cliente conforme', 1, 1)
+GO
 insert into servicios(PatenteVehiculo, IdTipo, comentarios, idcliente, IdEmpleado) values('KTJ262', 4, 'Cliente disconforme', 2, 2)
 GO
 

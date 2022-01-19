@@ -70,19 +70,15 @@
 
     </div>
 
-    <br />
-    
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-prov" OnClick="btnExportExcel_Click" />
-
     <br /><br /><br />
 
-    <center Style="padding: .5rem;">
-        <asp:GridView ID="dgvProveedores" runat="server" AllowSorting="True" Onsorting="dgvProveedores_Sorting" AutoGenerateColumns="False" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" CssClass="dgv-abm-prod table stl-tbl-proveedores" AllowPaging="True" OnPageIndexChanging="dgvProveedores_PageIndexChanging">
+    <center Style="">
+        <asp:GridView ID="dgvProveedores" runat="server" AllowSorting="True" Onsorting="dgvProveedores_Sorting" AutoGenerateColumns="False" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" CssClass="dgv-abm-prod table stl-tbl-proveedores" PageSize="5" AllowPaging="True" OnPageIndexChanging="dgvProveedores_PageIndexChanging">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="CUIT" HeaderText="CUIT" SortExpression="CUIT" />
                 <asp:BoundField DataField="RazonSocial" HeaderText="Razon Social" SortExpression="RazonSocial" />
-                <asp:BoundField DataField="Asignaciones" HeaderText="Asignaciones" SortExpression="Asignaciones" />
+                <asp:BoundField DataField="Asignaciones" HeaderText="Productos en stock" SortExpression="Asignaciones" />
                 <asp:CheckBoxField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -95,6 +91,8 @@
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-prov" OnClick="btnExportExcel_Click" />
 
     <script>
         function solonumeros(e) {

@@ -72,10 +72,6 @@
     margin-top: 50px;
 }
 
-.calendario-turnos {
-    margin-top: 50px;
-}
-
 .contacto-1 {
     margin-top: 50px;
 }
@@ -122,22 +118,6 @@
 @media screen and (max-width: 480px) {
     .nro-contacto {
         width: 60%;
-    }
-}
-
-.ttl-turno {
-    width: 40%;
-    background-color: #142382 !important;
-    color: #FFFFFF;
-    padding: 5px 0px 10px 0px;
-    border-radius: 25px;
-    box-shadow: 0px 0px 20px 1px #000000;
-    margin-bottom: 10px;
-}
-
-@media screen and (max-width: 480px) {
-    .ttl-turno {
-        width: 80%;
     }
 }
 
@@ -851,6 +831,11 @@
     z-index: 1;
 }
 
+.overlay2 {
+    position: relative !important;
+    background: rgba(0,0,0,0) !important;
+}
+
 .overlay.active {
     visibility: visible;
 }
@@ -900,23 +885,24 @@
 }
 
 .btn-nuevo-vehiculo {
-    color: #ffffff;
-    background-color: #fc0000;
+    color: #000000;
+    background-color: #98D983;
     border-radius: 50px;
     border: solid 1px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    padding-inline: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: 600;
     text-shadow: black 0.1em 0.1em 1.9em;
     box-shadow: 0 4px 6px -6px black;
+    width: 40px;
+    vertical-align: middle !important;
 }
 
 .btn-nuevo-vehiculo:hover {
-    background-color: #ffffff;
-    color: #fc0000;
+    background-color: #000000;
+    color: #98D983;
 }
 
 .btn-export-excel {
@@ -932,12 +918,11 @@
     font-weight: 600;
     text-shadow: black 0.1em 0.1em 1.9em;
     box-shadow: 0 4px 6px -6px black;
-    margin-bottom: 30px;
-    width: 212px;
     position: relative;
+    vertical-align: middle;
 }
 
-.btn-export-excel-historico-turnos{
+.btn-export-excel-historico-turnos {
     border-radius: 50px;
     border: solid 1px;
     color: #ffffff;
@@ -950,16 +935,8 @@
     font-weight: 600;
     text-shadow: black 0.1em 0.1em 1.9em;
     box-shadow: 0 4px 6px -6px black;
-    margin-bottom: 30px;
-    width: 300px;
     position: relative;
-    left: 0px;
-    top: 0px;
-}
-
-.btn-export-excel-historico-turnos:hover {
-    color: #9fcecc;
-    background-color: #ffffff;
+    vertical-align: middle;
 }
 
 .btn-export-excel:hover {
@@ -967,14 +944,17 @@
     background-color: #ffffff;
 }
 
+.btn-export-excel-historico-turnos:hover {
+    color: #9fcecc;
+    background-color: #ffffff;
+}
+
 .btn-export-excel-abm-prod {
-    left: 0px;
-    top: 22px;
+    
 }
 
 .btn-export-excel-abm-clientes {
-    left: 856px;
-    top: -38px;
+    
 }
 
 .dgv-usuarios {
@@ -987,11 +967,14 @@
 }
 
 .btn-export-excel-abm-prov {
-    left: 8px;
+    top: -22px;
+}
+
+.btn-export-excel-abm-tipos-serv {
+
 }
 
 .btn-export-excel-abm-marc-veh {
-    
 }
 
 .btn-export-excel-abm-marc-prod {
@@ -999,8 +982,7 @@
 }
 
 .btn-export-excel-abm-emp {
-    left: 772px;
-    top: -37px;
+    
 }
 
 .btn-export-excel-abm-turnos {
@@ -1412,4 +1394,151 @@
 .btn-agregar-vehiculo-abm:hover {
     background-color: #ffffff;
     color: #98D983;
+}
+
+.btn-completar-turno {
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #98D983;
+    border-radius: 50px;
+    border: solid 1px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding-inline: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    text-shadow: black 0.1em 0.1em 1.9em;
+    box-shadow: 0 4px 6px -6px black;
+    position: relative;
+    left: 10px;
+}
+
+.btn-completar-turno:hover {
+    background-color: #ffffff;
+    color: #98D983;
+}
+
+.lbl-mostrar-turnos-abmturnos {
+    font-size: 16px;
+    position: relative;
+}
+
+.ddl-mostrar-turnos-abmturnos {
+    position: relative;
+}
+
+.ddl-empleados-abm-turnos {
+    height: 31px;
+    vertical-align: middle;
+    position: relative;
+    left: 15px;
+    background-color: white;
+}
+
+.btn-borrar-turnos-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.txt-borrar-turnos-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.btn-borrar-servicios-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.txt-borrar-servicios-por-patente {
+    position: relative;
+    left: 150px;
+}
+
+.lbl-mensaje-turnos {
+    font-size: 20px;
+    color: red;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+    .calendario-turnos {
+        width: 195px;
+        height: 221px;
+    }
+    .td-tabla-campos-turnos {
+        padding-top: 1.5rem;
+    }
+    .ddl-servicios-turnos {
+    }
+    .txt-cuit-dni-turnos {
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .calendario-turnos {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+.ttl-turno {
+    width: 50%;
+    background-color: #142382 !important;
+    color: #FFFFFF;
+    padding: 5px 0px 10px 0px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 1px #000000;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .ttl-turno {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ttl-turno {
+        width: 80%;
+        font-size: 20px;
+    }
+}
+
+.ddl-vehiculos-turnos {
+    width: 100px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 4px;
+    background-color: #F9DFABB3;
+    font-weight: 500;
+}
+
+.txt-cuit-dni-turnos {
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px;
+    margin-top: 2px;
+    padding: 3px 7px 3px 7px;
+    width: 150px;
+}
+
+.btn-registrar-usuario {
+    border-radius: 50px;
+    border: solid 1px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding-inline: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    text-shadow: black 0.1em 0.1em 1.9em;
+    box-shadow: 0 4px 6px -6px black;
+    background-color: #006aff;
+    color: white;
+}
+
+.btn-registrar-usuario:hover {
+    background-color: white;
+    color: #006aff;
 }

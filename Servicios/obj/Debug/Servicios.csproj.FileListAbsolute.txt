@@ -30,3 +30,14 @@ C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debu
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.csproj.CopyComplete
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.dll
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\bin\Debug\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Debug\Servicios.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Servicios\obj\Debug\Servicios.pdb

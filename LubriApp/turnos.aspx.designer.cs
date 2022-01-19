@@ -60,24 +60,6 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.DropDownList ddlTiposServicio;
 
         /// <summary>
-        /// Control lblRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegistro;
-
-        /// <summary>
-        /// Control btnRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistro;
-
-        /// <summary>
         /// Control lblCuitDni.
         /// </summary>
         /// <remarks>
@@ -123,21 +105,30 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.Button btnBuscarCuitDni;
 
         /// <summary>
-        /// Control dgvTurnos.
+        /// Control lblRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvTurnos;
+        protected global::System.Web.UI.WebControls.Label lblRegistro;
 
         /// <summary>
-        /// Control ExportTurnos.
+        /// Control btnRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ExportTurnos;
+        protected global::System.Web.UI.WebControls.Button btnRegistro;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

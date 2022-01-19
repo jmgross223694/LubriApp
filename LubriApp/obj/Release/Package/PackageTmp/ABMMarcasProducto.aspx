@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMMarcasProducto.aspx.cs" Inherits="TPC_GROSS_LAINO_CHAPARRO.ABMMarcasProducto" EnableEventValidation = "false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMMarcasProducto.aspx.cs" Inherits="LubriApp.ABMMarcasProducto" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1 class="h1-abm">ABM - Marcas de productos</h1>
@@ -61,10 +61,6 @@
 
     </div>
 
-    <br />
-
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-marc-prod" OnClick="btnExportExcel_Click" />
-
     <br /><br /><br />
 
     <center Style="padding: .15rem;">
@@ -87,6 +83,8 @@
         </asp:GridView>
         <asp:SqlDataSource ID="MarcasProducto" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [MarcasProducto] ORDER BY [ID] ASC"></asp:SqlDataSource>
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-marc-prod" OnClick="btnExportExcel_Click" />
 
     <script>
         var btnAbrirPopup = document.getElementById('btnAgregar'),

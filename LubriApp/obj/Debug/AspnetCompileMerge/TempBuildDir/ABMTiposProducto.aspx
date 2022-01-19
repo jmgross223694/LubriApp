@@ -57,10 +57,6 @@
 
     </div>
 
-    <br />
-
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-tiposprod" OnClick="btnExportExcel_Click" />
-
     <br /><br /><br />
 
     <center style="padding: .5rem;">
@@ -83,6 +79,8 @@
         </asp:GridView>
         <asp:SqlDataSource ID="ExportTiposProducto" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportTiposProducto] ORDER BY [ID] ASC"></asp:SqlDataSource>
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-tiposprod" OnClick="btnExportExcel_Click" />
 
     <script>
         function solonumeros(e) {

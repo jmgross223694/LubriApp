@@ -117,7 +117,7 @@
 
     </div>
 
-    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-clientes" OnClick="btnExportExcel_Click" />
+    <br /><br /><br />
 
     <center>
         <asp:GridView ID="dgvClientes" runat="server" AllowSorting="True" OnSorting="dgvClientes_Sorting" AutoGenerateColumns="False" align="center" CellPadding="4" ForeColor="#333333" BackColor="Black" BorderColor="Black" BorderStyle="Inset" BorderWidth="5px" CaptionAlign="Bottom" HorizontalAlign="Center" CssClass="dgv-abm-prod" >
@@ -145,6 +145,8 @@
         </asp:GridView>
         <asp:SqlDataSource ID="ExportClientesDB" runat="server" ConnectionString="<%$ ConnectionStrings:GROSS_LAINO_CHAPARRO_DBConnectionString %>" SelectCommand="SELECT * FROM [ExportClientes]"></asp:SqlDataSource>
     </center>
+
+    <asp:Button ID="btnExportExcel" runat="server" Text="Exportar a Excel" cssclass="btn-export-excel btn-export-excel-abm-clientes" OnClick="btnExportExcel_Click" />
 
     <script>
         function solonumeros(e) {

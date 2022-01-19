@@ -18,6 +18,7 @@ namespace LubriApp
                 if (!IsPostBack)
                 {
                     BindData();
+                    completarCuitDni();                    
                 }
             }
             else
@@ -25,6 +26,23 @@ namespace LubriApp
                 Session.Add("error", "Ha sido redirigido a esta página por error.");
 
                 Response.Redirect("Error.aspx");
+            }
+        }
+
+        private void completarCuitDni()
+        {
+            string cuitDniIngresado = "";
+            try
+            {
+                cuitDniIngresado = Session["CuitDniIngresado"].ToString();
+            }
+            catch
+            {
+
+            }
+            if (cuitDniIngresado != "")
+            {
+                txtCuitDni.Text = cuitDniIngresado;
             }
         }
 

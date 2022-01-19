@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registroVehiculo.aspx.cs" Inherits="LubriApp.registroVehiculo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-    <div id="overlay" class="overlay active" align="center">
+    <div id="overlay" class="overlay overlay2 active" align="center">
 
         <div id="popup" class="popup popup-estilo">
 

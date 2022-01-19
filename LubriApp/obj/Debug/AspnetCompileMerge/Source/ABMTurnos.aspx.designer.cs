@@ -42,15 +42,6 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.ImageButton imgBtnBuscarFiltro;
 
         /// <summary>
-        /// Control ddlMostrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
-
-        /// <summary>
         /// Control txtBorrarTurnosPorPatente.
         /// </summary>
         /// <remarks>
@@ -67,15 +58,6 @@ namespace LubriApp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBorrarTurnosPorPatente;
-
-        /// <summary>
-        /// Control btnExportExcel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportExcel;
 
         /// <summary>
         /// Control btnDelete.
@@ -168,13 +150,40 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.ImageButton btnUpdate;
 
         /// <summary>
-        /// Control btnExportTurnosGeneral.
+        /// Control lblTabla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportTurnosGeneral;
+        protected global::System.Web.UI.WebControls.Label lblTabla;
+
+        /// <summary>
+        /// Control lblMostrarTurnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMostrarTurnos;
+
+        /// <summary>
+        /// Control ddlMostrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMostrar;
+
+        /// <summary>
+        /// Control lblTotalTurnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalTurnos;
 
         /// <summary>
         /// Control dgvHistoricoTurnos.
@@ -211,5 +220,23 @@ namespace LubriApp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource ExportTurnos;
+
+        /// <summary>
+        /// Control btnExportExcel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportExcel;
+
+        /// <summary>
+        /// Control btnExportTurnosGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportTurnosGeneral;
     }
 }

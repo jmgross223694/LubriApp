@@ -96,15 +96,6 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.Button imgBtnAgregarTipoServicio;
 
         /// <summary>
-        /// Control btnExportExcel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportExcel;
-
-        /// <summary>
         /// Control dgvTiposServicio.
         /// </summary>
         /// <remarks>
@@ -121,5 +112,14 @@ namespace LubriApp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource MarcasVehiculo;
+
+        /// <summary>
+        /// Control btnExportExcel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportExcel;
     }
 }

@@ -6,3 +6,11 @@ C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Release\Nego
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Release\Negocio.dll
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Negocio\obj\Release\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\bin\Release\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\bin\Release\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\bin\Release\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\bin\Release\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.pdb
