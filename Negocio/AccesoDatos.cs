@@ -17,8 +17,24 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            //conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=GROSS_LAINO_CHAPARRO_DB; integrated security=sspi");
-            conexion = new SqlConnection("data source=workstation id=DBLubriApp.mssql.somee.com;packet size=4096;user id=jmgross22_SQLLogin_1;pwd=efo9qqqnae;data source=DBLubriApp.mssql.somee.com;persist security info=False;initial catalog=DBLubriApp");
+            string dataSource = ".\\SQLEXPRESS",
+                   database = "LubriApp";
+
+            string LAN = "data source=" + dataSource + "; " +
+                         "initial catalog=" + database + "; " +
+                         "integrated security=sspi";
+
+            //string HOST_DB = "";
+
+            try
+            {
+                conexion = new SqlConnection(LAN);
+            }
+            catch (Exception)
+            {
+                //conexion = new SqlConnection(HOST_DB);
+            }
+
             comando = new SqlCommand();
         }
 
@@ -104,13 +120,11 @@ namespace Negocio
         {
             try
             {
-                string datos = "";
                 SqlConnectionStringBuilder db = new SqlConnectionStringBuilder();
-                //db.DataSource = ".\\SQLEXPRESS";
-                //db.InitialCatalog = "GROSS_LAINO_CHAPARRO_DB";
-                //db.IntegratedSecurity = true;
-                db.ConnectionString = "data source=workstation id=DBLubriApp.mssql.somee.com;packet size=4096;user id=jmgross22_SQLLogin_1;pwd=efo9qqqnae;data source=DBLubriApp.mssql.somee.com;persist security info=False;initial catalog=DBLubriApp";
-                datos = db.ToString();
+                db.DataSource = ".\\SQLEXPRESS";
+                db.InitialCatalog = "LubriApp";
+                db.IntegratedSecurity = true;
+                string datos = db.ToString();
                 conexion = new SqlConnection(datos);
                 conexion.Open();
                 return true;

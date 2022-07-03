@@ -59,11 +59,11 @@ namespace LubriApp
         {
             if (Session["usuario"] == null)
             {
-                btnCerrarSesion2.CssClass = "btn-invisible";
+                btnCerrarSesion.CssClass = "btn-invisible";
             }
         }
 
-        protected void btnCerrarSesion2_Click(object sender, EventArgs e)
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Logout();
             Response.Redirect("index.aspx", false);

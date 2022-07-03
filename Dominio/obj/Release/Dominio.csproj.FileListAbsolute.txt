@@ -4,3 +4,9 @@ C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Release\Domi
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Release\Dominio.dll
 C:\Users\JuanMa\Desktop\GitHub\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Release\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\bin\Release\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\bin\Release\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Release\Dominio.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Release\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Release\Dominio.pdb

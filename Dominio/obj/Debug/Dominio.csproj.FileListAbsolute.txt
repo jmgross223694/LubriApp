@@ -40,3 +40,9 @@ C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.dll
 C:\Users\User\Documents\Archivos GIT\TPC_GROSS_LAINO_CHAPARRO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\bin\Debug\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Debug\Dominio.dll
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Dominio\obj\Debug\Dominio.pdb

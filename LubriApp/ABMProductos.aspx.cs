@@ -653,15 +653,15 @@ namespace LubriApp
 
                     //Crear imagen Thumbnail (redimensionar imagen)
                     System.Drawing.Image imgThumbnail;
-                    int tamanioThumbnail = 200;
+                    int tamanioThumbnail = 800;
                     imgThumbnail = RedimensionarImagen(imagenOriginalBinaria, tamanioThumbnail);
                     byte[] bImgThumbnail = new byte[tamanioThumbnail];
                     ImageConverter convertidor = new ImageConverter();
                     bImgThumbnail = (byte[])convertidor.ConvertTo(imgThumbnail, typeof(byte[]));
 
                     //Actualizar tabla Inventario en DB
-                    //string cadenaConexion = "data source=.\\SQLEXPRESS; initial catalog=GROSS_LAINO_CHAPARRO_DB; integrated security=sspi";
-                    string cadenaConexion = "data source=workstation id=DBLubriApp.mssql.somee.com;packet size=4096;user id=jmgross22_SQLLogin_1;pwd=efo9qqqnae;data source=DBLubriApp.mssql.somee.com;persist security info=False;initial catalog=DBLubriApp";
+                    string cadenaConexion = "data source=.\\SQLEXPRESS; initial catalog=LubriApp; integrated security=sspi";
+                    //string cadenaConexion = "data source=workstation id=DBLubriApp.mssql.somee.com;packet size=4096;user id=jmgross22_SQLLogin_1;pwd=efo9qqqnae;data source=DBLubriApp.mssql.somee.com;persist security info=False;initial catalog=DBLubriApp";
                     SqlConnection conexionSql = new SqlConnection(cadenaConexion);
                     SqlCommand comandoSql = new SqlCommand();
                     //comandoSql.CommandText = "INSERT INTO ImagenesInventario(Imagen, EAN) VALUES(@Imagen, " + txtEan.Text + ")";

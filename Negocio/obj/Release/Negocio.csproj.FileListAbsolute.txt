@@ -14,3 +14,4 @@ C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.csproj.Assem
 C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.dll
 C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.pdb
+C:\Users\Juanma\Desktop\GitHub\LubriApp\Negocio\obj\Release\Negocio.csproj.CopyComplete

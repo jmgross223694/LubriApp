@@ -33,13 +33,13 @@ namespace LubriApp
         protected global::System.Web.UI.WebControls.Label btnIniciarSesion;
 
         /// <summary>
-        /// Control btnCerrarSesion2.
+        /// Control btnCerrarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarSesion2;
+        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
 
         /// <summary>
         /// Control MainContent.
